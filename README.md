@@ -28,6 +28,10 @@ This file is automatically sourced by `.zshrc` if it exists and is **never track
 - `.gitignore` - Global git ignore patterns
 - `install.sh` - Automated installation script that creates symlinks
 
+### .zshrc
+
+inspired by https://gist.github.com/swyxio/7fa1009e460ecb81a8d5e6d9ca4616a05#file-zshrc
+
 ## Directory Structure
 
 ```
@@ -44,3 +48,8 @@ This file is automatically sourced by `.zshrc` if it exists and is **never track
 ├── .gitignore -> ~/repos/dotfiles/.gitignore
 └── .zshrc.local      # Secrets (not in git)
 ```
+
+
+## kalaam
+
+consider using this editor theme: https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#getting-started
