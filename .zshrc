@@ -105,7 +105,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="cursor ~/.zshrc"
 # alias ohmyzsh="cursor ~/.oh-my-zsh"
 
-# In your main zshrc file (~/dotfiles/zshrc)
 # Add this line to source secrets if they exist:
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
