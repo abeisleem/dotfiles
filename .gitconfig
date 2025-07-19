@@ -1,0 +1,8 @@
+[core]
+	editor = cursor
+	excludesfile = /Users/abe/.gitignore
+[init]
+	defaultBranch = main
+[user]
+	name = abeisleem
+	email = a.f_isleem@hotmail.com
