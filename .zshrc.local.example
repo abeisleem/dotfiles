@@ -1,0 +1,9 @@
+# Local Zsh configuration
+# Copy this file to ~/.zshrc.local and fill in your actual values
+
+# OpenAI API key (required for the `please` function)
+export OPENAI_API_KEY="sk-your-api-key-here"
+
+# Opencode configuration secrets
+export CONTEXT7_API_KEY="your-context7-api-key-here"
+export CLOUDFLARE_API_TOKEN="your-cloudflare-api-token"
