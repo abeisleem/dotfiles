@@ -84,11 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='zed --wait'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -102,8 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="cursor ~/.zshrc"
-# alias ohmyzsh="cursor ~/.oh-my-zsh"
+# alias zshconfig="zed ~/.zshrc"
+# alias ohmyzsh="zed ~/.oh-my-zsh"
+alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 opencode"
 
 # Add this line to source secrets if they exist:
 if [[ -f ~/.zshrc.local ]]; then
@@ -188,7 +189,7 @@ please() {
   local request response response_parsed response_parsed_cleaned args
   local plat=$(platform)
   request=$(_generate_curl_api_request_for_please "What is the $plat bash command to $@? Only return the command to run itself, do not describe anything. Only use commands and executables that are common on most $plat systems. Do not quote the response and do not use markdown.")
-# printf "request: %s\n" "$request" >&2 
+# printf "request: %s\n" "$request" >&2
   response=$(eval "gum spin --show-output -s line --title \"Figuring out how to do this...\" -- $request")
 # printf "response: %s\n" "$response" >&2
   response_parsed=$(printf "%s" "$response" | jq --raw-output '.choices[0].message.content')
