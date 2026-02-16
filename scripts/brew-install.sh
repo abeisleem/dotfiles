@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 if ! command -v brew &> /dev/null; then
     echo "Homebrew not found. Installing..."
