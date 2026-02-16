@@ -1,0 +1,92 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "sticky_scroll": {
+    "enabled": true,
+  },
+  "git_panel": {
+    "tree_view": true,
+    "collapse_untracked_diff": false,
+  },
+  "disable_ai": false,
+  "buffer_font_family": ".ZedMono",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "OpenCode",
+      "model": "claude-haiku-4-5",
+    },
+    "default_model": {
+      "provider": "OpenCode",
+      "model": "claude-haiku-4-5",
+    },
+    "model_parameters": [],
+  },
+  "language_models": {
+    "openai_compatible": {
+      "OpenCode": {
+        "api_url": "https://opencode.ai/zen/v1",
+        "available_models": [
+          {
+            "name": "claude-haiku-4-5",
+            "max_tokens": 200000,
+            "max_output_tokens": 64000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "minimax-m2.1-free",
+            "max_tokens": 204800,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "glm-4.7-free",
+            "max_tokens": 204800,
+            "max_output_tokens": 131072,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "VSCode Icons for Zed (Dark)",
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 14,
+  "buffer_font_size": 11,
+  "theme": {
+    "mode": "system",
+    "light": "Night Owl Light",
+    "dark": "Night Owl Dark",
+  },
+}
