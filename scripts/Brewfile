@@ -13,6 +13,6 @@ brew "tree"
 brew "zsh-autosuggestions"
 
 cask "discord"
+cask "ghostty"
 cask "google-chrome"
 cask "zed"
-cask "ghostty"

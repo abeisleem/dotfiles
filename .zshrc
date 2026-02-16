@@ -112,7 +112,9 @@ if [[ -f ~/.zshrc.local ]]; then
 fi
 
 # https://github.com/Schniz/fnm#zsh
-eval "$(fnm env --use-on-cd --resolve-engines --shell  zsh)"
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
+fi
 
 function mkcdir ()
 {
