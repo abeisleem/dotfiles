@@ -20,7 +20,7 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "OpenCode",
-      "model": "claude-haiku-4-5",
+      "model": "minimax-m2.1-free",
     },
     "default_model": {
       "provider": "OpenCode",
