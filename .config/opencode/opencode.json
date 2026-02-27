@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "tokyonight",
   "small_model": "opencode/big-pickle",
   "model": "opencode/kimi-k2.5-free",
   "autoupdate": true,
@@ -19,12 +18,6 @@
         "todoread": "allow"
       }
     }
-  },
-  "tui": {
-    "scroll_speed": 1.7
-  },
-  "keybinds": {
-    "app_exit": "ctrl+q"
   },
   "permission": {
     "webfetch": "ask",
