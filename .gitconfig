@@ -1,5 +1,5 @@
 [core]
-	editor = cursor
+	editor = zed
 	excludesfile = /Users/abe/.gitignore
 [init]
 	defaultBranch = main
@@ -12,8 +12,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/opt/homebrew/bin/gh auth git-credential
