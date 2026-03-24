@@ -4,6 +4,10 @@
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 # Create symlinks
+## Directories
+ln -s "$DOTFILES_DIR/.agents" ~/.agents
+
+## Files
 ln -sf "$DOTFILES_DIR/.config/opencode/opencode-notifier.json" ~/.config/opencode/opencode-notifier.json
 ln -sf "$DOTFILES_DIR/.config/opencode/opencode.json" ~/.config/opencode/opencode.json
 ln -sf "$DOTFILES_DIR/.config/opencode/tui.json" ~/.config/opencode/tui.json
