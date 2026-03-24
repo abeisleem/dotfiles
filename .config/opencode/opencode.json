@@ -20,8 +20,12 @@
     }
   },
   "permission": {
-    "webfetch": "ask",
-    "websearch": "ask"
+    "webfetch": "allow",
+    "websearch": "ask",
+    "skill": "allow",
+    "external_directory": {
+      "~/.agents/skills/**": "allow"
+    }
   },
   "plugin": ["@mohak34/opencode-notifier@latest"],
   "mcp": {
