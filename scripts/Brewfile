@@ -14,7 +14,7 @@ brew "tree"
 brew "zsh-autosuggestions"
 
 cask "discord"
-cask "ghostty"
 cask "gcloud-cli"
+cask "ghostty"
 cask "google-chrome"
 cask "zed"
