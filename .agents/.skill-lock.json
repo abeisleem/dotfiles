@@ -55,6 +55,60 @@
       "skillFolderHash": "a9899469b191bb1c8df122a9eb208337c92abc1a",
       "installedAt": "2026-03-24T14:59:10.090Z",
       "updatedAt": "2026-03-24T14:59:10.090Z"
+    },
+    "gws-gmail-forward": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-forward/SKILL.md",
+      "skillFolderHash": "d94837bd158408af769028783100e3ec5681c977",
+      "installedAt": "2026-03-26T08:28:47.131Z",
+      "updatedAt": "2026-03-26T08:28:47.131Z"
+    },
+    "gws-gmail-reply": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-reply/SKILL.md",
+      "skillFolderHash": "79e44d2eb9054439d9012eeeebd552feb623fc6b",
+      "installedAt": "2026-03-26T08:28:47.671Z",
+      "updatedAt": "2026-03-26T08:28:47.671Z"
+    },
+    "gws-gmail-reply-all": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-reply-all/SKILL.md",
+      "skillFolderHash": "0dc67226b171bddf494248a7902b2a97a0a82f90",
+      "installedAt": "2026-03-26T08:28:48.439Z",
+      "updatedAt": "2026-03-26T08:28:48.439Z"
+    },
+    "gws-gmail-triage": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-triage/SKILL.md",
+      "skillFolderHash": "3ec7618f605912fba8c9ceef6b397bf92b903441",
+      "installedAt": "2026-03-26T08:28:49.299Z",
+      "updatedAt": "2026-03-26T08:28:49.299Z"
+    },
+    "gws-gmail-watch": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-watch/SKILL.md",
+      "skillFolderHash": "c309f2aa9d584fc3402225cda6b603b6266be114",
+      "installedAt": "2026-03-26T08:28:50.193Z",
+      "updatedAt": "2026-03-26T08:28:50.193Z"
+    },
+    "gws-gmail-read": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-gmail-read/SKILL.md",
+      "skillFolderHash": "602cf2d943ff3e8edd49c8974496dfba8ac9d8d0",
+      "installedAt": "2026-03-26T08:34:27.741Z",
+      "updatedAt": "2026-03-26T08:34:27.741Z"
     }
   },
   "dismissed": {
