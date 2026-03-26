@@ -27,7 +27,7 @@
       "skillPath": "skills/gws-gmail/SKILL.md",
       "skillFolderHash": "ca466a27c652ecab9400e0419b82e1942ee23194",
       "installedAt": "2026-03-24T13:51:21.473Z",
-      "updatedAt": "2026-03-26T10:36:38.741Z"
+      "updatedAt": "2026-03-26T11:00:47.778Z"
     },
     "gws-shared": {
       "source": "googleworkspace/cli",
@@ -54,7 +54,7 @@
       "skillPath": "skills/gws-gmail-send/SKILL.md",
       "skillFolderHash": "fd299632d4d5ef1d50fac85e3fda61a6f93aeae6",
       "installedAt": "2026-03-24T14:59:10.090Z",
-      "updatedAt": "2026-03-26T10:36:46.303Z"
+      "updatedAt": "2026-03-26T11:00:50.041Z"
     },
     "gws-gmail-forward": {
       "source": "googleworkspace/cli",
@@ -63,7 +63,7 @@
       "skillPath": "skills/gws-gmail-forward/SKILL.md",
       "skillFolderHash": "d94837bd158408af769028783100e3ec5681c977",
       "installedAt": "2026-03-26T08:28:47.131Z",
-      "updatedAt": "2026-03-26T08:28:47.131Z"
+      "updatedAt": "2026-03-26T11:00:48.434Z"
     },
     "gws-gmail-reply": {
       "source": "googleworkspace/cli",
@@ -72,7 +72,7 @@
       "skillPath": "skills/gws-gmail-reply/SKILL.md",
       "skillFolderHash": "79e44d2eb9054439d9012eeeebd552feb623fc6b",
       "installedAt": "2026-03-26T08:28:47.671Z",
-      "updatedAt": "2026-03-26T08:28:47.671Z"
+      "updatedAt": "2026-03-26T11:00:49.236Z"
     },
     "gws-gmail-reply-all": {
       "source": "googleworkspace/cli",
@@ -81,7 +81,7 @@
       "skillPath": "skills/gws-gmail-reply-all/SKILL.md",
       "skillFolderHash": "0dc67226b171bddf494248a7902b2a97a0a82f90",
       "installedAt": "2026-03-26T08:28:48.439Z",
-      "updatedAt": "2026-03-26T08:28:48.439Z"
+      "updatedAt": "2026-03-26T11:00:49.628Z"
     },
     "gws-gmail-triage": {
       "source": "googleworkspace/cli",
@@ -90,7 +90,7 @@
       "skillPath": "skills/gws-gmail-triage/SKILL.md",
       "skillFolderHash": "3ec7618f605912fba8c9ceef6b397bf92b903441",
       "installedAt": "2026-03-26T08:28:49.299Z",
-      "updatedAt": "2026-03-26T08:28:49.299Z"
+      "updatedAt": "2026-03-26T11:00:50.645Z"
     },
     "gws-gmail-watch": {
       "source": "googleworkspace/cli",
@@ -99,7 +99,7 @@
       "skillPath": "skills/gws-gmail-watch/SKILL.md",
       "skillFolderHash": "c309f2aa9d584fc3402225cda6b603b6266be114",
       "installedAt": "2026-03-26T08:28:50.193Z",
-      "updatedAt": "2026-03-26T08:28:50.193Z"
+      "updatedAt": "2026-03-26T11:00:51.173Z"
     },
     "gws-gmail-read": {
       "source": "googleworkspace/cli",
@@ -108,7 +108,70 @@
       "skillPath": "skills/gws-gmail-read/SKILL.md",
       "skillFolderHash": "602cf2d943ff3e8edd49c8974496dfba8ac9d8d0",
       "installedAt": "2026-03-26T08:34:27.741Z",
-      "updatedAt": "2026-03-26T08:34:27.741Z"
+      "updatedAt": "2026-03-26T11:00:48.874Z"
+    },
+    "gws-docs": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-docs/SKILL.md",
+      "skillFolderHash": "177789c728c568561a1034a2d52067a22df928b5",
+      "installedAt": "2026-03-26T11:00:46.942Z",
+      "updatedAt": "2026-03-26T11:00:46.942Z"
+    },
+    "gws-drive": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-drive/SKILL.md",
+      "skillFolderHash": "aa33da34e342802480cb75cebf5395b3974603d7",
+      "installedAt": "2026-03-26T11:00:47.365Z",
+      "updatedAt": "2026-03-26T11:00:47.365Z"
+    },
+    "gws-sheets": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-sheets/SKILL.md",
+      "skillFolderHash": "fec842e7ed16411d657ef0c122fa96a2c15b8539",
+      "installedAt": "2026-03-26T11:00:51.715Z",
+      "updatedAt": "2026-03-26T11:00:51.715Z"
+    },
+    "gws-sheets-append": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-sheets-append/SKILL.md",
+      "skillFolderHash": "322f08ee6b159e8153d3ee65d948094b5322fb88",
+      "installedAt": "2026-03-26T11:00:52.104Z",
+      "updatedAt": "2026-03-26T11:00:52.104Z"
+    },
+    "gws-sheets-read": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/gws-sheets-read/SKILL.md",
+      "skillFolderHash": "4c3027c7c0ebd69035f94240ac8ec3b3c3694fcb",
+      "installedAt": "2026-03-26T11:00:52.553Z",
+      "updatedAt": "2026-03-26T11:00:52.553Z"
+    },
+    "recipe-backup-sheet-as-csv": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/recipe-backup-sheet-as-csv/SKILL.md",
+      "skillFolderHash": "57eccdf7ebc0e050afd1431489e03bc9f0ec9370",
+      "installedAt": "2026-03-26T11:00:52.948Z",
+      "updatedAt": "2026-03-26T11:00:52.948Z"
+    },
+    "recipe-save-email-attachments": {
+      "source": "googleworkspace/cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/googleworkspace/cli.git",
+      "skillPath": "skills/recipe-save-email-attachments/SKILL.md",
+      "skillFolderHash": "7ca9cb8efbf7efd851c6d0dab04aac4307d15606",
+      "installedAt": "2026-03-26T11:00:53.429Z",
+      "updatedAt": "2026-03-26T11:00:53.429Z"
     }
   },
   "dismissed": {
