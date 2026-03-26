@@ -9,7 +9,7 @@
       "skillFolderHash": "6369f4649de69bd6857c9bc3b058a77206009238",
       "pluginName": "document-skills",
       "installedAt": "2026-03-24T09:24:52.083Z",
-      "updatedAt": "2026-03-24T09:24:52.083Z"
+      "updatedAt": "2026-03-26T11:22:28.438Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -172,6 +172,36 @@
       "skillFolderHash": "7ca9cb8efbf7efd851c6d0dab04aac4307d15606",
       "installedAt": "2026-03-26T11:00:53.429Z",
       "updatedAt": "2026-03-26T11:00:53.429Z"
+    },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/docx/SKILL.md",
+      "skillFolderHash": "a0d216202f9793a78da44cf96aabe48f42e627ac",
+      "pluginName": "document-skills",
+      "installedAt": "2026-03-26T11:22:27.937Z",
+      "updatedAt": "2026-03-26T11:22:27.937Z"
+    },
+    "xlsx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/xlsx/SKILL.md",
+      "skillFolderHash": "f5fb1cdb7993b2feee8367e983e9d4d58d2eedd4",
+      "pluginName": "document-skills",
+      "installedAt": "2026-03-26T11:22:28.903Z",
+      "updatedAt": "2026-03-26T11:22:28.903Z"
+    },
+    "internal-comms": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/skills.git",
+      "skillPath": "skills/internal-comms/SKILL.md",
+      "skillFolderHash": "8e2c21adc81f221477a4d3ecec07abcbc8a9320a",
+      "pluginName": "example-skills",
+      "installedAt": "2026-03-26T11:22:29.312Z",
+      "updatedAt": "2026-03-26T11:22:29.312Z"
     }
   },
   "dismissed": {
