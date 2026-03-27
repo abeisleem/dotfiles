@@ -5,8 +5,8 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 # Create symlinks
 ## Directories
-ln -s "$DOTFILES_DIR/.agents" ~/.config/.agents/
-ln -s "$DOTFILES_DIR/.config/opencode" ~/.config/opencode
+ln -s "$DOTFILES_DIR/.agents" ~/
+ln -s "$DOTFILES_DIR/.config/opencode" ~/.config
 
 ## Files
 ln -sf "$DOTFILES_DIR/.config/zed/settings.json" ~/.config/zed/settings.json
