@@ -310,6 +310,53 @@
       "skillFolderHash": "1c9774b35b83de4fb2cea0f3a9127617ca1b4e3d",
       "installedAt": "2026-03-29T11:17:40.712Z",
       "updatedAt": "2026-03-29T11:17:40.712Z"
+    },
+    "better-auth-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "better-auth/best-practices/SKILL.md",
+      "skillFolderHash": "58f87c7fe7c2c487779728c1e73ea43717612d37",
+      "pluginName": "auth-skills",
+      "installedAt": "2026-03-29T21:20:35.274Z",
+      "updatedAt": "2026-03-29T21:20:35.274Z"
+    },
+    "create-auth-skill": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "better-auth/create-auth/SKILL.md",
+      "skillFolderHash": "5192f50c149fc94b6bfb4cf288dfd84f37517e00",
+      "pluginName": "auth-skills",
+      "installedAt": "2026-03-29T21:20:35.671Z",
+      "updatedAt": "2026-03-29T21:20:35.671Z"
+    },
+    "better-auth-security-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "security/SKILL.md",
+      "skillFolderHash": "845a8a6373a316deb708dcf09a6d1e019ceccb50",
+      "installedAt": "2026-03-29T21:20:36.630Z",
+      "updatedAt": "2026-03-29T21:20:36.630Z"
+    },
+    "organization-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "better-auth/organization/SKILL.md",
+      "skillFolderHash": "461989110d1cd43c4809bea01c9a61b9fd432056",
+      "installedAt": "2026-03-29T21:20:38.306Z",
+      "updatedAt": "2026-03-29T21:20:38.306Z"
+    },
+    "email-and-password-best-practices": {
+      "source": "better-auth/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/better-auth/skills.git",
+      "skillPath": "better-auth/emailAndPassword/SKILL.md",
+      "skillFolderHash": "9da895cd339e3eda0ba6d1b8d2b54e24799b1992",
+      "installedAt": "2026-03-29T21:20:38.745Z",
+      "updatedAt": "2026-03-29T21:20:38.745Z"
     }
   },
   "dismissed": {
