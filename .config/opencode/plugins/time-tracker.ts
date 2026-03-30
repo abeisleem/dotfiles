@@ -843,7 +843,7 @@ Enter your choice:`
       time_status: tool({
         description: "Show the current timer status",
         args: {
-          all: tool.schema.boolean().optional().describe("Show all active timers in the current worktree"),
+          all: tool.schema.boolean().optional().describe("Show all active timers across all worktrees"),
         },
         async execute(args, context) {
           const state = await loadTrackerState()
@@ -851,13 +851,14 @@ Enter your choice:`
           const allInWorktree = activeEntriesForWorktree(state, context.worktree)
 
           if (args.all) {
-            if (allInWorktree.length === 0) {
-              return `No active timers are running in this worktree. Completed entries are stored in ${CSV_FILE}.`
+            const allTimers = activeEntries(state)
+            if (allTimers.length === 0) {
+              return `No active timers are running. Completed entries are stored in ${CSV_FILE}.`
             }
 
             const lines = [
-              `Active timers in this worktree (${allInWorktree.length}):`,
-              ...allInWorktree.map(formatActiveSummary),
+              `Active timers across all worktrees (${allTimers.length}):`,
+              ...allTimers.map(formatActiveSummary),
               `Completed entries are stored in ${CSV_FILE}.`,
             ]
             return lines.join("\n")

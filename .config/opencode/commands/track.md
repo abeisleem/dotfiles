@@ -1,7 +1,7 @@
 ---
 description: Track time with start, stop, status, today, week, or export
 agent: build
-model: opencode/gpt-5-nano
+model: opencode/minimax-m2.5-free
 ---
 
 Parse the first argument as the subcommand. Infer the intention when there are typos, for example, treat `statis` as `status`.
@@ -21,16 +21,19 @@ Supported subcommands:
 - `stop [--all] [--actual|--last-activity|--auto] [note...]`
   Use the `time_stop` tool.
   By default, stop only the current session's timer.
+  Default behavior with no mode flag:
+  - if there is no large idle gap, stop at the current time
+  - if the idle gap exceeds the configured threshold, prompt before stopping
   Flags:
   - `--all` -> stop all active timers across all worktrees
-  - `--actual` -> mode `actual`
-  - `--last-activity` -> mode `last-activity`
-  - `--auto` -> mode `auto`
+  - `--actual` -> always stop at the current time
+  - `--last-activity` -> stop at the most recent tracked activity time
+  - `--auto` -> use the most recent tracked activity time only when the idle gap exceeds the configured threshold; otherwise stop at the current time
   Any remaining text becomes the note.
 
 - `status [--all]`
   Use the `time_status` tool.
-  If `--all` is present, pass `all: true`.
+  If `--all` is present, pass `all: true` to show active timers across all worktrees.
 
 - `today`
   Use the `time_report` tool with `range: "today"`.
@@ -52,6 +55,7 @@ Examples:
 - `/track help`
 - `/track start refactor auth flow`
 - `/track stop --last-activity fixed export formatting`
+- `/track stop --auto after lunch`
 - `/track stop --all --actual end of day`
 - `/track status --all`
 - `/track export --range week --include-active --output weekly-report.md`
