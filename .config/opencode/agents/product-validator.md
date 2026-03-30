@@ -1,8 +1,6 @@
 ---
 description: Pressure-tests product ideas before code is written using forcing questions, market research, and markdown memos
 mode: primary
-temperature: 0.45
-steps: 12
 permission:
   edit: allow
   bash: deny
