@@ -357,6 +357,16 @@
       "skillFolderHash": "9da895cd339e3eda0ba6d1b8d2b54e24799b1992",
       "installedAt": "2026-03-29T21:20:38.745Z",
       "updatedAt": "2026-03-29T21:20:38.745Z"
+    },
+    "hono": {
+      "source": "yusukebe/hono-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/yusukebe/hono-skill.git",
+      "skillPath": "skills/hono/SKILL.md",
+      "skillFolderHash": "16c9105ba9528eaa17a375ee56efb3c2376439ab",
+      "pluginName": "hono-skill",
+      "installedAt": "2026-03-30T10:49:05.228Z",
+      "updatedAt": "2026-03-30T10:49:05.228Z"
     }
   },
   "dismissed": {
