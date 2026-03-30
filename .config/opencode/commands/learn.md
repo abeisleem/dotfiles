@@ -1,5 +1,6 @@
 ---
 description: Extract non-obvious learnings from session to AGENTS.md files to build codebase understanding
+subtask: true
 ---
 
 Analyze this session and extract non-obvious learnings to add to AGENTS.md files.

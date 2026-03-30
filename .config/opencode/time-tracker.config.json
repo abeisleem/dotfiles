@@ -1,0 +1,13 @@
+{
+  "idleThresholdMinutes": 15,
+  "categories": {
+    "docs": ["readme", "docs", "notes", ".md", ".mdx", ".txt"],
+    "frontend": [".tsx", ".jsx", ".css", ".scss", ".html"],
+    "code": [".ts", ".js", ".py", ".go", ".rb", ".rs", ".java"],
+    "config": ["config", ".github", ".json", ".yaml", ".yml", ".toml", ".ini", ".env"],
+    "research": [".pdf", ".doc", ".pptx"],
+    "writing": ["blog", "post", "article"],
+    "debugging": ["test", ".spec.", ".test."],
+    "infra": ["docker", "kubernetes", "terraform", ".tf"]
+  }
+}
