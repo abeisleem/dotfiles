@@ -19,14 +19,8 @@ type ActiveEntry = {
   recentHints?: string[]
 }
 
-type SessionMeta = {
-  parentSessionID?: string
-  lineageRootSessionID: string
-}
-
 type TrackerState = {
   entries: Record<string, ActiveEntry>
-  sessions: Record<string, SessionMeta>
 }
 
 type CompletedEntry = ActiveEntry & {
@@ -58,9 +52,12 @@ const DEFAULT_CONFIG: TimeTrackerConfig = {
 }
 
 const CONFIG_DIR = path.join(process.env.HOME || "~", ".config/opencode")
+const DATA_DIR = path.join(process.env.HOME || "~", ".local/share/opencode/time-tracker")
 const CONFIG_FILE = path.join(CONFIG_DIR, "time-tracker.config.json")
-const ACTIVE_FILE = path.join(CONFIG_DIR, "time-tracker-active.json")
-const CSV_FILE = path.join(CONFIG_DIR, "time-tracker.csv")
+const ACTIVE_FILE = path.join(DATA_DIR, "time-tracker-active.json")
+const CSV_FILE = path.join(DATA_DIR, "time-tracker.csv")
+const LEGACY_ACTIVE_FILE = path.join(CONFIG_DIR, "time-tracker-active.json")
+const LEGACY_CSV_FILE = path.join(CONFIG_DIR, "time-tracker.csv")
 const CSV_HEADER = [
   "id",
   "label",
@@ -275,18 +272,16 @@ function sessionFilesFromDiff(diff: Array<{ file: string }>, worktree: string, s
 function emptyTrackerState(): TrackerState {
   return {
     entries: {},
-    sessions: {},
   }
 }
 
 function normalizeTrackerState(value: unknown): TrackerState {
   if (!value || typeof value !== "object") return emptyTrackerState()
 
-  if ("entries" in value || "sessions" in value) {
+  if ("entries" in value) {
     const candidate = value as Partial<TrackerState>
     return {
       entries: candidate.entries && typeof candidate.entries === "object" ? candidate.entries : {},
-      sessions: candidate.sessions && typeof candidate.sessions === "object" ? candidate.sessions : {},
     }
   }
 
@@ -294,14 +289,6 @@ function normalizeTrackerState(value: unknown): TrackerState {
     const entry = value as ActiveEntry
     return {
       entries: entry.sessionID ? { [entry.sessionID]: entry } : {},
-      sessions: entry.sessionID
-        ? {
-            [entry.sessionID]: {
-              parentSessionID: entry.parentSessionID,
-              lineageRootSessionID: entry.lineageRootSessionID || entry.parentSessionID || entry.sessionID,
-            },
-          }
-        : {},
     }
   }
 
@@ -310,25 +297,6 @@ function normalizeTrackerState(value: unknown): TrackerState {
 
 function sessionLabel(sessionID: string) {
   return sessionID.slice(0, 8)
-}
-
-function getSessionMeta(state: TrackerState, sessionID: string): SessionMeta {
-  return state.sessions[sessionID] || { lineageRootSessionID: sessionID }
-}
-
-function updateSessionMeta(state: TrackerState, sessionID: string, parentSessionID?: string) {
-  const parentMeta = parentSessionID ? getSessionMeta(state, parentSessionID) : undefined
-  const next: SessionMeta = {
-    parentSessionID,
-    lineageRootSessionID: parentMeta?.lineageRootSessionID || parentSessionID || sessionID,
-  }
-  state.sessions[sessionID] = next
-
-  const active = state.entries[sessionID]
-  if (active) {
-    active.parentSessionID = next.parentSessionID
-    active.lineageRootSessionID = next.lineageRootSessionID
-  }
 }
 
 function activeEntries(state: TrackerState) {
@@ -399,13 +367,20 @@ async function loadTrackerState() {
     const parsed = JSON.parse(raw)
     return normalizeTrackerState(parsed)
   } catch (error) {
-    if (errorCode(error) === "ENOENT") return emptyTrackerState()
+    if (errorCode(error) === "ENOENT") {
+      if (await fileExists(LEGACY_ACTIVE_FILE)) {
+        const raw = await readFile(LEGACY_ACTIVE_FILE, "utf8")
+        const parsed = JSON.parse(raw)
+        return normalizeTrackerState(parsed)
+      }
+      return emptyTrackerState()
+    }
     throw error
   }
 }
 
 async function saveTrackerState(state: TrackerState) {
-  await mkdir(CONFIG_DIR, { recursive: true })
+  await mkdir(DATA_DIR, { recursive: true })
 
   const tempFile = `${ACTIVE_FILE}.tmp`
   await writeFile(tempFile, `${JSON.stringify(state, null, 2)}\n`, "utf8")
@@ -413,7 +388,7 @@ async function saveTrackerState(state: TrackerState) {
 }
 
 async function appendCompletedEntry(entry: CompletedEntry) {
-  await mkdir(CONFIG_DIR, { recursive: true })
+  await mkdir(DATA_DIR, { recursive: true })
   const exists = await fileExists(CSV_FILE)
   if (!exists) {
     await writeFile(CSV_FILE, `${CSV_HEADER.join(",")}\n`, "utf8")
@@ -464,8 +439,61 @@ async function readCompletedEntries() {
       } satisfies CompletedEntry
     })
   } catch (error) {
-    if (errorCode(error) === "ENOENT") return []
+    if (errorCode(error) === "ENOENT") {
+      if (await fileExists(LEGACY_CSV_FILE)) {
+        const raw = await readFile(LEGACY_CSV_FILE, "utf8")
+        const lines = raw.split(/\r?\n/).filter(Boolean)
+        if (lines.length <= 1) return []
+
+        return lines.slice(1).map((line: string) => {
+          const cells = parseCsvLine(line)
+          return {
+            id: cells[0] || "",
+            label: cells[1] || "Untitled task",
+            startedAt: cells[2] || "",
+            endedAt: cells[3] || "",
+            durationMs: Number(cells[4] || 0),
+            directory: cells[6] || "",
+            worktree: cells[7] || "",
+            scope: cells[8] || ".",
+            agent: cells[9] || "",
+            sessionID: cells[10] || "",
+            category: cells[11] || "uncategorized",
+            changedFiles: (cells[12] || "").split(";").filter(Boolean),
+            note: cells[13] || undefined,
+          } satisfies CompletedEntry
+        })
+      }
+      return []
+    }
     throw error
+  }
+}
+
+async function fetchSessionLineage(client: any, sessionID: string, directory: string) {
+  let currentID: string | undefined = sessionID
+  let parentSessionID: string | undefined
+  let lineageRootSessionID = sessionID
+
+  while (currentID) {
+    const result: { id?: string; parentID?: string | null } | undefined = await client.session.get(
+      { sessionID: currentID, directory },
+      { responseStyle: "data" }
+    ).catch(() => undefined)
+
+    if (!result) break
+
+    lineageRootSessionID = result.id || currentID
+    const nextParent: string | undefined = result.parentID || undefined
+    if (currentID === sessionID) {
+      parentSessionID = nextParent
+    }
+    currentID = nextParent
+  }
+
+  return {
+    parentSessionID,
+    lineageRootSessionID,
   }
 }
 
@@ -586,25 +614,21 @@ function markdownForExport(input: {
   return `${lines.join("\n").trim()}\n`
 }
 
-export const TimeTrackerPlugin: Plugin = async () => {
+export const TimeTrackerPlugin: Plugin = async ({ client }) => {
   await loadConfig()
 
   return {
     event: async ({ event }: { event: any }) => {
-      if (event.type === "session.created" || event.type === "session.updated") {
+      if (event.type === "session.updated") {
         const state = await loadTrackerState()
         const sessionID = event.properties?.sessionID
         if (sessionID) {
-          updateSessionMeta(state, sessionID, event.properties?.info?.parentID)
-
           const active = state.entries[sessionID]
           if (active) {
-            if (event.type === "session.updated") {
-              const scope = scopeFor(active.directory, active.worktree)
-              const diffs = event.properties?.info?.summary?.diffs
-              if (Array.isArray(diffs)) {
-                active.sessionFiles = sessionFilesFromDiff(diffs, active.worktree, scope)
-              }
+            const scope = scopeFor(active.directory, active.worktree)
+            const diffs = event.properties?.info?.summary?.diffs
+            if (Array.isArray(diffs)) {
+              active.sessionFiles = sessionFilesFromDiff(diffs, active.worktree, scope)
             }
             active.lastActivityAt = isoNow()
           }
@@ -691,7 +715,7 @@ export const TimeTrackerPlugin: Plugin = async () => {
             return `A timer is already running for "${current.label}" (${duration} so far) in ${current.directory}. Stop it before starting a new one in this session.`
           }
 
-          const sessionMeta = getSessionMeta(state, context.sessionID)
+          const sessionMeta = await fetchSessionLineage(client, context.sessionID, context.directory)
 
           const next: ActiveEntry = {
             id: crypto.randomUUID(),
