@@ -2,6 +2,7 @@
 description: Track time with start, stop, status, today, week, or export
 agent: build
 model: opencode/minimax-m2.5-free
+subtask: true
 ---
 
 Parse the first argument as the subcommand. Infer the intention when there are typos, for example, treat `statis` as `status`.
