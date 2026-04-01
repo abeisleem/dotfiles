@@ -18,6 +18,7 @@ permission:
     "*": ask
     "gws *": allow
     "git *": allow
+    "date *": allow
   external_directory: ask
   doom_loop: deny
 ---
