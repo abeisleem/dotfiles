@@ -367,6 +367,16 @@
       "pluginName": "hono-skill",
       "installedAt": "2026-03-30T10:49:05.228Z",
       "updatedAt": "2026-03-30T10:49:05.228Z"
+    },
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
+      "skillPath": "skills/agent-browser/SKILL.md",
+      "skillFolderHash": "3b319028d5e51497e251a3481d2c7d8521a860eb",
+      "pluginName": "agent-browser",
+      "installedAt": "2026-04-04T07:17:26.302Z",
+      "updatedAt": "2026-04-04T07:17:26.302Z"
     }
   },
   "dismissed": {
