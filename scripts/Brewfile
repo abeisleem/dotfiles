@@ -1,3 +1,4 @@
+brew "agent-browser"
 brew "bun", from: "oven-sh/bun"
 brew "cloudflared"
 brew "fnm"
