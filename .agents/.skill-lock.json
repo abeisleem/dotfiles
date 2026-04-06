@@ -217,27 +217,27 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/building-ai-agent-on-cloudflare/SKILL.md",
-      "skillFolderHash": "41188eab26b74aa1d434f03c4898215c5fe5d024",
+      "skillFolderHash": "1cc0b190e3522ac057854f68454919e5dd0b3593",
       "installedAt": "2026-03-27T10:48:48.065Z",
-      "updatedAt": "2026-04-01T06:04:05.474Z"
+      "updatedAt": "2026-04-06T16:22:16.029Z"
     },
     "building-mcp-server-on-cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/building-mcp-server-on-cloudflare/SKILL.md",
-      "skillFolderHash": "8d20b604bcb67f44e7ddcd8ed1ae5040161c3b49",
+      "skillFolderHash": "248cb2a2b68fe85d61f685bdb4dd7192c60a45b8",
       "installedAt": "2026-03-27T10:48:48.996Z",
-      "updatedAt": "2026-03-27T10:48:48.996Z"
+      "updatedAt": "2026-04-06T16:22:18.378Z"
     },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "skillFolderHash": "954802448df3da62d2c20d965ed007ba62be3444",
+      "skillFolderHash": "f8cb65f36614663c6fabc082be7e905ba5da74d4",
       "installedAt": "2026-03-27T10:48:49.689Z",
-      "updatedAt": "2026-04-01T06:04:08.390Z"
+      "updatedAt": "2026-04-06T16:22:20.635Z"
     },
     "durable-objects": {
       "source": "cloudflare/skills",
@@ -262,27 +262,27 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/wrangler/SKILL.md",
-      "skillFolderHash": "14e1631a53c066784caa8bbdd70d94d95c40101a",
+      "skillFolderHash": "10976f5e35835e8a626aa978d6c45b8f9ba91d22",
       "installedAt": "2026-03-27T10:48:51.891Z",
-      "updatedAt": "2026-03-27T10:48:51.891Z"
+      "updatedAt": "2026-04-06T16:22:22.596Z"
     },
     "sandbox-sdk": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/sandbox-sdk/SKILL.md",
-      "skillFolderHash": "f26fcb245b044c68bcde819618924f8c18e97c1c",
+      "skillFolderHash": "4d90eab74b6f49050c92b95ba635bc99c41671e9",
       "installedAt": "2026-03-27T10:48:52.728Z",
-      "updatedAt": "2026-03-27T10:48:52.728Z"
+      "updatedAt": "2026-04-06T16:22:24.843Z"
     },
     "web-perf": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/web-perf/SKILL.md",
-      "skillFolderHash": "fe238b54421680dc84b3fad7968cd8e916cb2b8b",
+      "skillFolderHash": "e8e8c50ca6abf0849a4d9d69c1bed8b98b5d7411",
       "installedAt": "2026-03-27T10:50:41.203Z",
-      "updatedAt": "2026-03-27T10:50:41.203Z"
+      "updatedAt": "2026-04-06T16:22:26.570Z"
     },
     "api-designer": {
       "source": "jeffallan/claude-skills",
@@ -373,10 +373,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "3b319028d5e51497e251a3481d2c7d8521a860eb",
-      "pluginName": "agent-browser",
+      "skillFolderHash": "b6e1b44899ca28ace73db4e57cb78018807d66ac",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-04-04T07:17:26.302Z"
+      "updatedAt": "2026-04-06T16:22:28.557Z"
     }
   },
   "dismissed": {
