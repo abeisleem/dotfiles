@@ -395,6 +395,15 @@
       "pluginName": "example-skills",
       "installedAt": "2026-04-07T13:09:15.415Z",
       "updatedAt": "2026-04-07T13:09:15.415Z"
+    },
+    "slidev": {
+      "source": "slidevjs/slidev",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/slidevjs/slidev.git",
+      "skillPath": "skills/slidev/SKILL.md",
+      "skillFolderHash": "1828d4a65689d72678fc2f9903c13dadd95a15e3",
+      "installedAt": "2026-04-08T14:21:18.470Z",
+      "updatedAt": "2026-04-08T14:21:18.470Z"
     }
   },
   "dismissed": {
