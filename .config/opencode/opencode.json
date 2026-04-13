@@ -3,22 +3,7 @@
   "small_model": "opencode/big-pickle",
   "model": "opencode/minimax-m2.5-free",
   "autoupdate": true,
-  "agent": {
-    "explore": {
-      "disable": false,
-      "permission": {
-        "bash": "allow",
-        "glob": "allow",
-        "grep": "allow",
-        "list": "allow",
-        "question": "allow",
-        "webfetch": "ask",
-        "websearch": "ask",
-        "todowrite": "allow",
-        "todoread": "allow"
-      }
-    }
-  },
+  "agent": {},
   "permission": {
     "webfetch": "allow",
     "websearch": "ask",
@@ -32,7 +17,7 @@
     "chrome-devtools": {
       "type": "local",
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
-      "enabled": true
+      "enabled": false
     },
     "cloudflare-docs": {
       "type": "remote",
