@@ -7,6 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "cortx-server",
+      "username": "abe",
+      "args": ["-i", "/Users/abe/.ssh/cortx-server"],
+      "projects": [
+        {
+          "paths": ["/home/abe", "/home/opencode/.config/opencode"],
+        },
+      ],
+    },
+  ],
   "diff_view_style": "unified",
   "sticky_scroll": {
     "enabled": true,
