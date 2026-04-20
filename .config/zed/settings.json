@@ -14,7 +14,14 @@
       "args": ["-i", "/Users/abe/.ssh/cortx-server"],
       "projects": [
         {
-          "paths": ["/home/abe", "/home/opencode/.config/opencode"],
+          "paths": ["/home/abe"],
+        },
+
+        {
+          "paths": ["/srv/repos/"],
+        },
+        {
+          "paths": ["/srv/repos/cortx-server"],
         },
       ],
     },
