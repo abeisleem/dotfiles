@@ -198,19 +198,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/internal-comms/SKILL.md",
-      "skillFolderHash": "8e2c21adc81f221477a4d3ecec07abcbc8a9320a",
-      "pluginName": "example-skills",
+      "skillFolderHash": "9869687dcf6deb6802ca88ac11e67b6f7278017a",
       "installedAt": "2026-03-26T11:22:29.312Z",
-      "updatedAt": "2026-03-26T11:22:29.312Z"
+      "updatedAt": "2026-04-22T13:02:34.218Z"
     },
     "agents-sdk": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/agents-sdk/SKILL.md",
-      "skillFolderHash": "9c5d32179a903197133310632ed5ba448566bdfe",
+      "skillFolderHash": "fe7c98385541543a62abf65090654fcbc181c8b7",
       "installedAt": "2026-03-27T10:48:47.252Z",
-      "updatedAt": "2026-03-27T10:48:47.252Z"
+      "updatedAt": "2026-04-22T13:02:36.304Z"
     },
     "building-ai-agent-on-cloudflare": {
       "source": "cloudflare/skills",
@@ -235,9 +234,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "skillFolderHash": "f8cb65f36614663c6fabc082be7e905ba5da74d4",
+      "skillFolderHash": "b49af211f0b24c94bc62d45cdfc53155fb940f6e",
       "installedAt": "2026-03-27T10:48:49.689Z",
-      "updatedAt": "2026-04-06T16:22:20.635Z"
+      "updatedAt": "2026-04-22T13:02:38.375Z"
     },
     "durable-objects": {
       "source": "cloudflare/skills",
@@ -262,9 +261,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/wrangler/SKILL.md",
-      "skillFolderHash": "10976f5e35835e8a626aa978d6c45b8f9ba91d22",
+      "skillFolderHash": "e62e1a384325810b7159c48106c5be9571bde636",
       "installedAt": "2026-03-27T10:48:51.891Z",
-      "updatedAt": "2026-04-06T16:22:22.596Z"
+      "updatedAt": "2026-04-22T13:02:39.682Z"
     },
     "sandbox-sdk": {
       "source": "cloudflare/skills",
@@ -373,9 +372,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "b6e1b44899ca28ace73db4e57cb78018807d66ac",
+      "skillFolderHash": "121eecacd86c0aab06aef5cd4663e80c5397cd41",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-04-06T16:22:28.557Z"
+      "updatedAt": "2026-04-22T13:02:41.562Z"
     },
     "dogfood": {
       "source": "vercel-labs/agent-browser",
@@ -391,10 +390,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/skill-creator/SKILL.md",
-      "skillFolderHash": "98a510d1cfef9f82c3b1eec200229ca68725e613",
-      "pluginName": "example-skills",
+      "skillFolderHash": "3cf9a8db32597ba3e24b584a3d696f4e11c7d7b6",
       "installedAt": "2026-04-07T13:09:15.415Z",
-      "updatedAt": "2026-04-07T13:09:15.415Z"
+      "updatedAt": "2026-04-22T13:02:44.437Z"
     },
     "slidev": {
       "source": "slidevjs/slidev",
