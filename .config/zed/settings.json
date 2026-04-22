@@ -11,38 +11,25 @@
     {
       "host": "cortx-server",
       "username": "abe",
-      "args": [
-        "-i",
-        "/Users/abe/.ssh/cortx-server"
-      ],
+      "args": ["-i", "/Users/abe/.ssh/cortx-server"],
       "projects": [
         {
-          "paths": [
-            "/etc/opencode"
-          ]
+          "paths": ["/home/abe"],
         },
         {
-          "paths": [
-            "/home/abe"
-          ]
+          "paths": ["/home/opencode"],
         },
         {
-          "paths": [
-            "/home/opencode"
-          ]
+          "paths": ["/srv/repos/"],
         },
         {
-          "paths": [
-            "/srv/repos/"
-          ]
+          "paths": ["/srv/repos/cortx-server"],
         },
         {
-          "paths": [
-            "/srv/repos/cortx-server"
-          ]
-        }
-      ]
-    }
+          "paths": ["/srv/repos/optimise-team-ops"],
+        },
+      ],
+    },
   ],
   "diff_view_style": "unified",
   "sticky_scroll": {
