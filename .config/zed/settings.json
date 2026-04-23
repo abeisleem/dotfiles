@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
   "ssh_connections": [
     {
       "host": "cortx-server",
@@ -36,15 +45,17 @@
     "enabled": true,
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
     "collapse_untracked_diff": false,
   },
   "disable_ai": false,
   "buffer_font_family": ".ZedMono",
   "agent": {
+    "dock": "right",
     "inline_assistant_model": {
       "provider": "OpenCode",
-      "model": "minimax-m2.1-free",
+      "model": "minimax-m2.1",
     },
     "default_model": {
       "provider": "OpenCode",
@@ -70,7 +81,7 @@
             },
           },
           {
-            "name": "minimax-m2.1-free",
+            "name": "minimax-m2.1",
             "max_tokens": 204800,
             "max_output_tokens": 131072,
             "max_completion_tokens": 200000,
@@ -82,7 +93,7 @@
             },
           },
           {
-            "name": "glm-4.7-free",
+            "name": "glm-4.7",
             "max_tokens": 204800,
             "max_output_tokens": 131072,
             "max_completion_tokens": 200000,
