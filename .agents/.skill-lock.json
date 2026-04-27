@@ -412,6 +412,24 @@
       "pluginName": "andrej-karpathy-skills",
       "installedAt": "2026-04-20T12:37:53.922Z",
       "updatedAt": "2026-04-20T12:37:53.922Z"
+    },
+    "ast-grep": {
+      "source": "ast-grep/agent-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ast-grep/agent-skill.git",
+      "skillPath": "ast-grep/skills/ast-grep/SKILL.md",
+      "skillFolderHash": "ef60f77564e2d47d0cba25a809daa3af8f0c469b",
+      "installedAt": "2026-04-27T09:22:17.723Z",
+      "updatedAt": "2026-04-27T09:22:17.723Z"
+    },
+    "index-knowledge": {
+      "source": "cloudflare/kumo",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudflare/kumo.git",
+      "skillPath": ".agents/skills/index-knowledge/SKILL.md",
+      "skillFolderHash": "7a901a6fe0ca3c0e918022e3e6404968dcfe9374",
+      "installedAt": "2026-04-27T09:25:57.576Z",
+      "updatedAt": "2026-04-27T09:25:57.576Z"
     }
   },
   "dismissed": {
