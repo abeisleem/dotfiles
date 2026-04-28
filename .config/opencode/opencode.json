@@ -75,12 +75,12 @@
     "cloudflare-docs": {
       "type": "remote",
       "url": "https://docs.mcp.cloudflare.com/mcp",
-      "enabled": true
+      "enabled": false
     },
     "cloudflare-api": {
       "type": "remote",
-      "enabled": false,
-      "url": "https://mcp.cloudflare.com/mcp"
+      "url": "https://mcp.cloudflare.com/mcp",
+      "enabled": false
     },
     "context7": {
       "type": "remote",
@@ -93,12 +93,12 @@
     "shadcn": {
       "type": "local",
       "command": ["npx", "shadcn@latest", "mcp"],
-      "enabled": true
+      "enabled": false
     },
     "supabase": {
       "type": "remote",
       "url": "http://localhost:54321/mcp",
-      "enabled": true
+      "enabled": false
     },
     "gh_grep": {
       "type": "remote",
