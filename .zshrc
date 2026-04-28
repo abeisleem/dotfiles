@@ -102,9 +102,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="zed ~/.zshrc"
+alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
 alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 opencode"
+alias lz="lazygit"
 
 # Add this line to source secrets if they exist:
 if [[ -f ~/.zshrc.local ]]; then
