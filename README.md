@@ -37,6 +37,12 @@ dotfiles/
 ├── .gitconfig
 ├── .gitignore
 ├── .tmux.conf
+├── .agents/
+│   └── skills/              # Skills installed from the `skills` npm CLI package
+├── .config/
+│   └── opencode/
+│       ├── commands/        # Custom OpenCode commands
+│       └── skills/          # Custom handwritten OpenCode skills
 └── scripts/
     ├── brew-install.sh     # Installs Homebrew + packages
     └── symlink.sh          # Creates symlinks
@@ -48,9 +54,13 @@ dotfiles/
 ├── .config/
 │   ├── opencode/
 │   │   ├── opencode.json -> dotfiles/.config/opencode/opencode.json
-│   │   └── opencode-notifier.json -> dotfiles/.config/opencode/opencode-notifier.json
+│   │   ├── opencode-notifier.json -> dotfiles/.config/opencode/opencode-notifier.json
+│   │   ├── commands/ -> dotfiles/.config/opencode/commands/
+│   │   └── skills/ -> dotfiles/.config/opencode/skills/
 │   └── zed/
 │       └── settings.json -> dotfiles/.config/zed/settings.json
+├── .agents/
+│   └── skills/ -> dotfiles/.agents/skills/
 └── .zshrc.local            # Secrets (not in git)
 ```
 
@@ -60,3 +70,6 @@ dotfiles/
 - `.gitconfig` - Git settings
 - `.tmux.conf` - Tmux configuration
 - `.config/` - App configurations (opencode, zed)
+- `.agents/skills/` - Skills installed from the `skills` npm command-line package
+- `.config/opencode/skills/` - Custom handwritten OpenCode skills
+- `.config/opencode/commands/` - Custom OpenCode slash commands
