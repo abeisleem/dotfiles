@@ -7,6 +7,7 @@
   "permission": {
     "external_directory": {
       "~/.agents/skills/**": "allow",
+      "~/temp/**": "allow",
       "**/.ssh/**": "deny",
       "~/.local/share/opencode/mcp-auth.json": "deny"
     },
