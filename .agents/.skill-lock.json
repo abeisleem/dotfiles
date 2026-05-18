@@ -234,9 +234,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "skillFolderHash": "b49af211f0b24c94bc62d45cdfc53155fb940f6e",
+      "skillFolderHash": "451766442941fd2cffea9fa20559dafbcf0ef60e",
       "installedAt": "2026-03-27T10:48:49.689Z",
-      "updatedAt": "2026-04-22T13:02:38.375Z"
+      "updatedAt": "2026-05-18T06:13:58.377Z"
     },
     "durable-objects": {
       "source": "cloudflare/skills",
@@ -261,9 +261,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/wrangler/SKILL.md",
-      "skillFolderHash": "e62e1a384325810b7159c48106c5be9571bde636",
+      "skillFolderHash": "45cc198b2aad3f06e8abf91333f55fbe7579f659",
       "installedAt": "2026-03-27T10:48:51.891Z",
-      "updatedAt": "2026-04-22T13:02:39.682Z"
+      "updatedAt": "2026-05-18T06:14:00.188Z"
     },
     "sandbox-sdk": {
       "source": "cloudflare/skills",
@@ -288,9 +288,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
       "skillPath": "skills/api-designer/SKILL.md",
-      "skillFolderHash": "85266138a23c76780cf704f527287b914c2a91f9",
+      "skillFolderHash": "bbb2fd84c10a46fb3d17121ffbc86aa1bba5ca65",
       "installedAt": "2026-03-29T11:12:04.035Z",
-      "updatedAt": "2026-03-29T11:12:04.035Z"
+      "updatedAt": "2026-05-18T06:14:02.537Z"
     },
     "plan-harder": {
       "source": "am-will/codex-skills",
@@ -372,9 +372,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "121eecacd86c0aab06aef5cd4663e80c5397cd41",
+      "skillFolderHash": "c1470a475a0472fceda2401ea6763708a91680a8",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-04-22T13:02:41.562Z"
+      "updatedAt": "2026-05-18T06:14:04.542Z"
     },
     "dogfood": {
       "source": "vercel-labs/agent-browser",
@@ -399,9 +399,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/slidevjs/slidev.git",
       "skillPath": "skills/slidev/SKILL.md",
-      "skillFolderHash": "1828d4a65689d72678fc2f9903c13dadd95a15e3",
+      "skillFolderHash": "15d0e7596290e1b568adf04be0466e6622b69bc8",
       "installedAt": "2026-04-08T14:21:18.470Z",
-      "updatedAt": "2026-04-08T14:21:18.470Z"
+      "updatedAt": "2026-05-18T06:14:06.665Z"
     },
     "karpathy-guidelines": {
       "source": "forrestchang/andrej-karpathy-skills",
