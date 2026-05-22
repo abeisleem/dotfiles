@@ -72,7 +72,7 @@ ZSH_THEME="pmcgee"
 # Add wisely, as too many plugins slow down shell startup.
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 # zsh-syntax-highlighting should be added at the end of the list
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting gh gcloud tailscale brew npm)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting gh gcloud tailscale brew npm fzf)
 
 source $ZSH/oh-my-zsh.sh
 
