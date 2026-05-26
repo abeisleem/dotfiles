@@ -4,5 +4,10 @@
   "keybinds": {
     "app_exit": "ctrl+q"
   },
-  "scroll_speed": 1.7
+  "scroll_acceleration": {
+    "enabled": true
+  },
+  "attention": {
+    "enabled": true
+  }
 }
