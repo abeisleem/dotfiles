@@ -69,7 +69,6 @@
     "codesearch": "allow",
     "doom_loop": "ask"
   },
-  "plugin": ["@mohak34/opencode-notifier@latest"],
   "mcp": {
     "chrome-devtools": {
       "type": "local",
