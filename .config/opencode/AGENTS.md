@@ -1,0 +1,1 @@
+- if it's the first message in the chat, before responding, explore the directory you're in (README.md, etc) to gather context and respond better.
