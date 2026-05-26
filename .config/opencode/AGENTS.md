@@ -1,1 +1,2 @@
-- if it's the first message in the chat, before responding, explore the directory you're in (README.md, etc) to gather context and respond better.
+- if it's the first message in the chat, before responding, explore the directory you're in to gather necessary context
+- if you need to install a package to the machine for any reason, defer to using `brew install` as a first option

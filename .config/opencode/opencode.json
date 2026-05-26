@@ -52,7 +52,8 @@
       "cat **/.aws/**": "deny",
       "cat **/.ssh/**": "deny",
       "rm *": "deny",
-      "git push": "ask"
+      "git push": "ask",
+      "brew install": "ask"
     },
     "edit": "allow",
     "glob": "allow",
