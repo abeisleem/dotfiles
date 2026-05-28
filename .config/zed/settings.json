@@ -64,8 +64,7 @@
     "model_parameters": [],
   },
   "language_models": {
-    "openai_compatible": {
-      },
+    "openai_compatible": {},
   },
   "telemetry": {
     "diagnostics": false,
