@@ -1,6 +1,7 @@
 ---
 description: split the current diff into atomic commits with git
 subtask: true
+agent: build
 model: opencode/deepseek-v4-flash-free
 ---
 
