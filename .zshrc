@@ -104,7 +104,8 @@ fi
 # Example aliases
 alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
-alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 opencode"
+alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode"
+alias oci="oc run --interactive"
 alias lz="lazygit"
 
 # Add this line to source secrets if they exist:
