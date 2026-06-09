@@ -15,5 +15,6 @@ ln -sf "$DOTFILES_DIR/.gitconfig" ~/.gitconfig
 ln -sf "$DOTFILES_DIR/.gitignore" ~/.gitignore
 ln -sf "$DOTFILES_DIR/.tmux.conf" ~/.tmux.conf
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
+ln -sf "$DOTFILES_DIR/Brewfile" ~/Brewfile
 
 echo "Dotfiles installed!"
