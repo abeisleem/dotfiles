@@ -1,0 +1,8 @@
+{
+  "trustedtaps": [
+    "anomalyco/tap",
+    "oven-sh/bun",
+    "stripe/stripe-cli",
+    "tw93/tap"
+  ]
+}
