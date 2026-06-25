@@ -1,7 +1,6 @@
 ---
 description: Organizes consulting engagement repos by capturing source material, extracting operational insight, tracking stakeholders and status, and supporting internal and client-facing deliverables.
 mode: all
-temperature: 0.2
 permission:
   read: allow
   glob: allow
