@@ -16,9 +16,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "skillFolderHash": "eb6a23305aea6e340d14b9de3766e721f9f4861b",
       "installedAt": "2026-03-24T09:28:37.395Z",
-      "updatedAt": "2026-03-24T09:28:37.395Z"
+      "updatedAt": "2026-06-26T07:14:25.137Z"
     },
     "gws-gmail": {
       "source": "googleworkspace/cli",
@@ -234,9 +234,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "skillFolderHash": "451766442941fd2cffea9fa20559dafbcf0ef60e",
+      "skillFolderHash": "a92bec38b7b5ff5e634b509c7ff3c289d9d61290",
       "installedAt": "2026-03-27T10:48:49.689Z",
-      "updatedAt": "2026-05-18T06:13:58.377Z"
+      "updatedAt": "2026-06-26T07:14:27.799Z"
     },
     "durable-objects": {
       "source": "cloudflare/skills",
@@ -372,9 +372,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "c1470a475a0472fceda2401ea6763708a91680a8",
+      "skillFolderHash": "9b31e495b887e4ca123960415eca69fc7e1bba28",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-05-18T06:14:04.542Z"
+      "updatedAt": "2026-06-26T07:14:29.414Z"
     },
     "dogfood": {
       "source": "vercel-labs/agent-browser",
@@ -436,10 +436,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/handoff/SKILL.md",
-      "skillFolderHash": "7bbb60d64c911617cee7f71b2ba9e24364faa14e",
-      "pluginName": "mattpocock-skills",
+      "skillFolderHash": "aa82ffd61d7a3bda110060b4e24ec782b983cb8d",
       "installedAt": "2026-06-14T20:27:36.571Z",
-      "updatedAt": "2026-06-14T20:27:36.571Z"
+      "updatedAt": "2026-06-26T07:14:30.732Z"
     }
   },
   "dismissed": {
@@ -448,14 +447,16 @@
   "lastSelectedAgents": [
     "amp",
     "antigravity",
+    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
     "deepagents",
     "gemini-cli",
     "github-copilot",
-    "kimi-cli",
+    "kimi-code-cli",
     "opencode",
-    "warp"
+    "warp",
+    "zed"
   ]
 }
