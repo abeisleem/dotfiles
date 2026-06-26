@@ -376,15 +376,6 @@
       "installedAt": "2026-04-04T07:17:26.302Z",
       "updatedAt": "2026-06-26T07:14:29.414Z"
     },
-    "dogfood": {
-      "source": "vercel-labs/agent-browser",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
-      "skillPath": "skills/dogfood/SKILL.md",
-      "skillFolderHash": "c818a5daf6e6ef6ec6375705df201499de4e6437",
-      "installedAt": "2026-04-07T13:09:00.001Z",
-      "updatedAt": "2026-04-07T13:09:00.001Z"
-    },
     "skill-creator": {
       "source": "anthropics/skills",
       "sourceType": "github",
