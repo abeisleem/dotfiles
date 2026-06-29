@@ -2,7 +2,6 @@
 description: split the current diff into atomic commits with git
 subtask: false
 agent: build
-model: opencode/deepseek-v4-flash-free
 ---
 
 first load the `git` skill.
