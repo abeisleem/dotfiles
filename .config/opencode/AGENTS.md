@@ -1,2 +1,2 @@
-- if it's the first message in the chat, before responding, explore the directory you're in to gather necessary context
-- if you need to install a package to the machine for any reason, defer to using `brew install` as a first option
+- if it's the first message in the chat, and the user is referring to specific context that's not immediately obvious to you, explore the directory you're in to gather necessary context
+- if you need to install a package to the machine for any reason, defer to using `brew install` as a first option. after installation to complete the task, list them all at the end of your message and prompt the user to determine if they would like to uninstall any of them
