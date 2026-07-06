@@ -2,6 +2,5 @@
 # Copy this file to ~/.zshrc.local and fill in your actual values
 
 # Opencode configuration secrets
-export CONTEXT7_API_KEY="your-context7-api-key-here"
 export CLOUDFLARE_API_TOKEN="your-cloudflare-api-token"
 export EXECUTOR_TOKEN="your-executor-token-here"
