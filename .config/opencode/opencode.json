@@ -116,6 +116,14 @@
       "type": "remote",
       "url": "https://mcp.granola.ai/mcp",
       "oauth": {}
+    },
+    "executor": {
+      "type": "remote",
+      "url": "http://localhost:4789/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer {env:EXECUTOR_TOKEN}"
+      }
     }
   }
 }
