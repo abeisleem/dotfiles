@@ -80,24 +80,6 @@
       "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
       "enabled": false
     },
-    "cloudflare-docs": {
-      "type": "remote",
-      "url": "https://docs.mcp.cloudflare.com/mcp",
-      "enabled": false
-    },
-    "cloudflare-api": {
-      "type": "remote",
-      "url": "https://mcp.cloudflare.com/mcp",
-      "enabled": false
-    },
-    "context7": {
-      "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-      },
-      "enabled": true
-    },
     "shadcn": {
       "type": "local",
       "command": ["npx", "shadcn@latest", "mcp"],
@@ -111,11 +93,6 @@
     "gh_grep": {
       "type": "remote",
       "url": "https://mcp.grep.app"
-    },
-    "granola": {
-      "type": "remote",
-      "url": "https://mcp.granola.ai/mcp",
-      "oauth": {}
     },
     "executor": {
       "type": "remote",
