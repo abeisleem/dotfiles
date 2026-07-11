@@ -1,8 +1,9 @@
-tap "anomalyco/tap"
-tap "oven-sh/bun"
-tap "stripe/stripe-cli"
-tap "tw93/tap"
+tap "anomalyco/tap", trusted: true
+tap "oven-sh/bun", trusted: true
+tap "stripe/stripe-cli", trusted: true
+tap "tw93/tap", trusted: true
 brew "agent-browser"
+brew "bun"
 brew "cloudflared"
 brew "ffmpeg"
 brew "fnm"
@@ -10,15 +11,17 @@ brew "fzf"
 brew "gh"
 brew "googleworkspace-cli"
 brew "lazygit"
+brew "mupdf"
 brew "tmux"
 brew "tree"
 brew "yt-dlp"
 brew "zsh-autosuggestions"
-brew "anomalyco/tap/opencode"
+brew "anomalyco/tap/opencode", trusted: true
 brew "stripe/stripe-cli/stripe"
 brew "tw93/tap/mole"
 cask "anki"
 cask "beekeeper-studio"
+cask "codex-app"
 cask "discord"
 cask "gcloud-cli"
 cask "google-chrome"
