@@ -3,6 +3,7 @@
   "small_model": "opencode/big-pickle",
   "model": "opencode/deepseek-v4-flash-free",
   "autoupdate": true,
+  "subagent_depth": 2,
   "agent": {
     "anti-glaze": {
       "color": "#2f07d9"
