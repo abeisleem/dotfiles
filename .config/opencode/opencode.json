@@ -4,6 +4,7 @@
   "model": "opencode/deepseek-v4-flash-free",
   "autoupdate": true,
   "subagent_depth": 2,
+  "default_agent": "anti-glaze",
   "agent": {
     "anti-glaze": {
       "color": "#2f07d9"
