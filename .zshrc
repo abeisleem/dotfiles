@@ -130,6 +130,15 @@ function t() {
  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
 }
 
+# List only directly-installed Homebrew formulas and casks
+brew-mine() {
+  echo "=== Formulas (explicit, not dependencies) ==="
+  brew leaves
+  echo ""
+  echo "=== Casks (all are explicit) ==="
+  brew list --cask
+}
+
 # Get a bash command using opencode AI
 please() {
   local plat=$(uname -s)
