@@ -178,20 +178,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/docx/SKILL.md",
-      "skillFolderHash": "a0d216202f9793a78da44cf96aabe48f42e627ac",
-      "pluginName": "document-skills",
+      "skillFolderHash": "6e6f5b95c1de6e803cc07b214f5059b074d64e0c",
       "installedAt": "2026-03-26T11:22:27.937Z",
-      "updatedAt": "2026-03-26T11:22:27.937Z"
+      "updatedAt": "2026-07-27T12:27:04.764Z"
     },
     "xlsx": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/xlsx/SKILL.md",
-      "skillFolderHash": "f5fb1cdb7993b2feee8367e983e9d4d58d2eedd4",
-      "pluginName": "document-skills",
+      "skillFolderHash": "fe6471cc9b5b97aae0b576ccb92ffd9b0207589d",
       "installedAt": "2026-03-26T11:22:28.903Z",
-      "updatedAt": "2026-03-26T11:22:28.903Z"
+      "updatedAt": "2026-07-27T12:27:08.203Z"
     },
     "internal-comms": {
       "source": "anthropics/skills",
@@ -334,9 +332,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
       "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "9b31e495b887e4ca123960415eca69fc7e1bba28",
+      "skillFolderHash": "037e8078db4b20b4aa25c04f21c6de7d335ec449",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-06-26T07:20:48.209Z"
+      "updatedAt": "2026-07-27T12:27:09.312Z"
     },
     "skill-creator": {
       "source": "anthropics/skills",
@@ -380,9 +378,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/kumo.git",
       "skillPath": ".agents/skills/index-knowledge/SKILL.md",
-      "skillFolderHash": "7a901a6fe0ca3c0e918022e3e6404968dcfe9374",
+      "skillFolderHash": "5979ff722535e32d9a7d3bf42f85106a6cffb16a",
       "installedAt": "2026-04-27T09:25:57.576Z",
-      "updatedAt": "2026-04-27T09:25:57.576Z"
+      "updatedAt": "2026-07-27T12:27:12.232Z"
     },
     "handoff": {
       "source": "mattpocock/skills",
@@ -409,9 +407,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/kitlangton/terminal-control.git",
       "skillPath": "skills/terminal-control/SKILL.md",
-      "skillFolderHash": "a1cd114e830ac8bbd2a557f55395ec06d80cd5e2",
+      "skillFolderHash": "652efdccf2cc06c20550238e9df85788d3fc1d3b",
       "installedAt": "2026-07-11T06:54:32.091Z",
-      "updatedAt": "2026-07-11T06:54:32.091Z"
+      "updatedAt": "2026-07-27T12:27:14.145Z"
     },
     "better-auth-best-practices": {
       "source": "better-auth/skills",
