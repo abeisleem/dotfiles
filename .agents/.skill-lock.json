@@ -334,7 +334,7 @@
       "skillPath": "skills/agent-browser/SKILL.md",
       "skillFolderHash": "037e8078db4b20b4aa25c04f21c6de7d335ec449",
       "installedAt": "2026-04-04T07:17:26.302Z",
-      "updatedAt": "2026-07-27T12:27:09.312Z"
+      "updatedAt": "2026-07-29T09:32:45.409Z"
     },
     "skill-creator": {
       "source": "anthropics/skills",
