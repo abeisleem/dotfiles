@@ -8,6 +8,6 @@
     "enabled": true
   },
   "attention": {
-    "enabled": true
+    "enabled": false,
   }
 }
