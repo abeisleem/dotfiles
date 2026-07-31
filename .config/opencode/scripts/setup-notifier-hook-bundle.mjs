@@ -68,6 +68,8 @@ async function main() {
   <string>com.opencode.notifier-hook</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
+  <key>LSUIElement</key>
+  <true/>
   <key>CFBundleName</key>
   <string>notifier-hook</string>
   <key>CFBundlePackageType</key>
