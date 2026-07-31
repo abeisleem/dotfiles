@@ -331,7 +331,7 @@ export default (async ({ client, directory, worktree }) => {
           state.idleNotified = true
           state.tmux = state.tmux ?? (await getTmuxContext())
           sessions.set(sessionID, state)
-          notifySession(notifier, sessionID, `opencode · ${state.title}`, "Task finished", worktreeName, state.tmux)
+          notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
         }
         return
       }
@@ -342,7 +342,7 @@ export default (async ({ client, directory, worktree }) => {
         state.idleNotified = true
         state.tmux = state.tmux ?? (await getTmuxContext())
         sessions.set(sessionID, state)
-        notifySession(notifier, sessionID, `opencode · ${state.title}`, "Task finished", worktreeName, state.tmux)
+        notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
         return
       }
 
@@ -354,21 +354,21 @@ export default (async ({ client, directory, worktree }) => {
 
         state.tmux = state.tmux ?? (await getTmuxContext())
         sessions.set(sessionID, state)
-        notifySession(notifier, sessionID, `opencode · ${state.title}`, "Error", worktreeName, state.tmux)
+        notifySession(notifier, sessionID, state.title, "Error", worktreeName, state.tmux)
         return
       }
 
       if (event.type === "permission.asked") {
         state.tmux = state.tmux ?? (await getTmuxContext())
         sessions.set(sessionID, state)
-        notifySession(notifier, sessionID, `opencode · ${state.title}`, "Needs permission", worktreeName, state.tmux)
+        notifySession(notifier, sessionID, state.title, "Needs permission", worktreeName, state.tmux)
         return
       }
 
       if (event.type === "question.asked") {
         state.tmux = state.tmux ?? (await getTmuxContext())
         sessions.set(sessionID, state)
-        notifySession(notifier, sessionID, `opencode · ${state.title}`, "Needs your input", worktreeName, state.tmux)
+        notifySession(notifier, sessionID, state.title, "Needs your input", worktreeName, state.tmux)
         return
       }
 
