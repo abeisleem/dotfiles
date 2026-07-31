@@ -38,6 +38,7 @@ let sharedNotifierStart: Promise<void> | undefined
 let sharedNotifierStarted = false
 let activeInstances = 0
 let notificationsDisabled = false
+let notificationPermissionPrompted = false
 
 function getWorktreeName(worktree: string) {
   return path.basename(worktree.replace(/\/$/, "")) || worktree
@@ -89,6 +90,24 @@ async function activateGhostty() {
     await runCommand("open", ["-a", "Ghostty"])
   } catch {
     // If Ghostty isn't installed or can't be launched, tmux still gets a chance to switch.
+  }
+}
+
+async function promptForNotificationPermission() {
+  if (process.platform !== "darwin" || notificationPermissionPrompted) return
+  notificationPermissionPrompted = true
+
+  try {
+    const response = await runCommand("osascript", [
+      "-e",
+      'display dialog "OpenCode notifications are disabled. Enable notifications for NotifierHook in System Settings." with title "OpenCode notifications" buttons {"Not now", "Open Notifications"} default button "Open Notifications" with icon caution',
+    ])
+
+    if (response.includes("Open Notifications")) {
+      await runCommand("open", ["x-apple.systempreferences:com.apple.preference.notifications"])
+    }
+  } catch {
+    // The user dismissed the dialog or System Settings could not be opened.
   }
 }
 
@@ -169,6 +188,12 @@ function notifySession(
   tmux?: TmuxContext,
 ) {
   void showNotification(notifier, sessionID, title, body, worktreeName, tmux).catch((error) => {
+    if (isMacOSNotificationPermissionError(error)) {
+      notificationsDisabled = true
+      void promptForNotificationPermission()
+      return
+    }
+
     console.warn("tmux-notify: failed to show notification", error)
   })
 }
@@ -253,6 +278,7 @@ export default (async ({ client, directory, worktree }) => {
     if (notifier.permission === "denied") {
       notificationsDisabled = true
       console.warn("tmux-notify: notifications unavailable (denied)")
+      void promptForNotificationPermission()
     }
   } catch (error) {
     if (isMacOSNotificationPermissionError(error)) {

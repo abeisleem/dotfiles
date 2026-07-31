@@ -1,5 +1,6 @@
 import { access, chmod, copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises"
 import { execFile } from "node:child_process"
+import { createHash } from "node:crypto"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { promisify } from "node:util"
@@ -10,51 +11,80 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url))
 const configDir = path.resolve(scriptDir, "..")
 const packageRoot = path.join(configDir, "node_modules", "@phtdacosta", "notifier-hook-darwin-arm64")
 const launcherPath = path.join(configDir, "node_modules", "notifier-hook", "index.js")
-const bundleRoot = path.join(packageRoot, "NotifierHook.app")
+const bundleName = "NotifierHook.app"
+const bundleRoot = path.join(packageRoot, bundleName)
 const bundleMacOSDir = path.join(bundleRoot, "Contents", "MacOS")
 const bundleResourcesDir = path.join(bundleRoot, "Contents", "Resources")
 const bundleInfoPlist = path.join(bundleRoot, "Contents", "Info.plist")
 const bundleIconSetDir = path.join(bundleResourcesDir, "AppIcon.iconset")
 const bundleIconFile = path.join(bundleResourcesDir, "NotifierHook.icns")
-const sourceIconFile = path.join(configDir, "assets", "opencode-logo-dark.png")
+const bundleBuildMarker = path.join(bundleResourcesDir, ".opencode-notifier-build")
+const sourceIconFile = path.join(configDir, "assets", "opencode-logo-light.png")
 const sourceBinary = path.join(packageRoot, "notifier-hook-daemon")
 const bundledBinary = path.join(bundleMacOSDir, "notifier-hook-daemon")
+const launchServicesRegister = "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister"
+
+async function fileHash(file) {
+  return createHash("sha256").update(await readFile(file)).digest("hex")
+}
+
+async function bundleBuildSignature() {
+  return JSON.stringify({
+    format: 1,
+    binary: await fileHash(sourceBinary),
+    icon: await fileHash(sourceIconFile),
+  })
+}
+
+async function hasCurrentBundle(signature) {
+  try {
+    const marker = await readFile(bundleBuildMarker, "utf8")
+    if (marker !== signature) return false
+    await execFileAsync("codesign", ["--verify", "--deep", "--strict", bundleRoot])
+    return true
+  } catch {
+    return false
+  }
+}
 
 async function main() {
   if (process.platform !== "darwin") return
 
   await access(sourceBinary)
   await access(sourceIconFile)
-  await mkdir(bundleMacOSDir, { recursive: true })
-  await mkdir(bundleResourcesDir, { recursive: true })
-  await copyFile(sourceBinary, bundledBinary)
-  await chmod(bundledBinary, 0o755)
+  const signature = await bundleBuildSignature()
 
-  await rm(bundleIconSetDir, { recursive: true, force: true })
-  await mkdir(bundleIconSetDir, { recursive: true })
+  if (!(await hasCurrentBundle(signature))) {
+    await mkdir(bundleMacOSDir, { recursive: true })
+    await mkdir(bundleResourcesDir, { recursive: true })
+    await copyFile(sourceBinary, bundledBinary)
+    await chmod(bundledBinary, 0o755)
 
-  const iconSizes = [
-    [16, 16],
-    [32, 32],
-    [64, 64],
-    [128, 128],
-    [256, 256],
-    [512, 512],
-    [1024, 1024],
-  ]
+    await rm(bundleIconSetDir, { recursive: true, force: true })
+    await mkdir(bundleIconSetDir, { recursive: true })
 
-  for (const [width, height] of iconSizes) {
-    await execFileAsync("sips", ["-z", String(height), String(width), sourceIconFile, "--out", path.join(bundleIconSetDir, `icon_${width}x${height}.png`)])
-    if (width !== 1024) {
-      const doubledWidth = width * 2
-      const doubledHeight = height * 2
-      await execFileAsync("sips", ["-z", String(doubledHeight), String(doubledWidth), sourceIconFile, "--out", path.join(bundleIconSetDir, `icon_${width}x${height}@2x.png`)])
+    const iconSizes = [
+      [16, 16],
+      [32, 32],
+      [64, 64],
+      [128, 128],
+      [256, 256],
+      [512, 512],
+      [1024, 1024],
+    ]
+
+    for (const [width, height] of iconSizes) {
+      await execFileAsync("sips", ["-z", String(height), String(width), sourceIconFile, "--out", path.join(bundleIconSetDir, `icon_${width}x${height}.png`)])
+      if (width !== 1024) {
+        const doubledWidth = width * 2
+        const doubledHeight = height * 2
+        await execFileAsync("sips", ["-z", String(doubledHeight), String(doubledWidth), sourceIconFile, "--out", path.join(bundleIconSetDir, `icon_${width}x${height}@2x.png`)])
+      }
     }
-  }
 
-  await execFileAsync("iconutil", ["-c", "icns", bundleIconSetDir, "-o", bundleIconFile])
+    await execFileAsync("iconutil", ["-c", "icns", bundleIconSetDir, "-o", bundleIconFile])
 
-  const infoPlist = `<?xml version="1.0" encoding="UTF-8"?>
+    const infoPlist = `<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -71,29 +101,40 @@ async function main() {
   <key>LSUIElement</key>
   <true/>
   <key>CFBundleName</key>
-  <string>notifier-hook</string>
+  <string>NotifierHook</string>
+  <key>CFBundleDisplayName</key>
+  <string>NotifierHook</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
-  <string>1.0.0</string>
+  <string>2.0.0</string>
   <key>CFBundleVersion</key>
-  <string>1</string>
+  <string>2</string>
 </dict>
 </plist>
 `
-  await writeFile(bundleInfoPlist, infoPlist)
+    await writeFile(bundleInfoPlist, infoPlist)
+    await writeFile(bundleBuildMarker, signature)
 
-  try {
-    await execFileAsync("codesign", ["--force", "--deep", "--sign", "-", bundleRoot])
-  } catch (error) {
-    console.warn("setup-notifier-hook-bundle: codesign failed", error?.message || error)
+    try {
+      await execFileAsync("codesign", ["--force", "--deep", "--sign", "-", bundleRoot])
+    } catch (error) {
+      console.warn("setup-notifier-hook-bundle: codesign failed", error?.message || error)
+    }
+
+    try {
+      await execFileAsync(launchServicesRegister, ["-f", bundleRoot])
+    } catch (error) {
+      console.warn("setup-notifier-hook-bundle: Launch Services registration failed", error?.message || error)
+    }
   }
 
   const launcherSource = await readFile(launcherPath, "utf8")
   const needle = "    return path.join(pkgDir, binaryName);"
+  const bundledBinaryPathLine = `        const bundledBinaryPath = path.join(pkgDir, '${bundleName}', 'Contents', 'MacOS', binaryName);`
   const replacement = [
     "    if (process.platform === 'darwin') {",
-    "        const bundledBinaryPath = path.join(pkgDir, 'NotifierHook.app', 'Contents', 'MacOS', binaryName);",
+    bundledBinaryPathLine,
     "        try {",
     "            if (require('fs').existsSync(bundledBinaryPath)) {",
     "                return bundledBinaryPath;",
