@@ -33,6 +33,13 @@ OpenCode V1 and V2 currently run side by side because their native configuration
 - The `opencode` shell function in `.zshrc` sets a V1-specific `XDG_CONFIG_HOME`, while `opencode2` uses the normal config directory.
 - `scripts/symlink.sh` installs both configuration directories.
 
+Two V1 settings do not have native V2 equivalents:
+
+- `experimental.disable_paste_summary` is retained in the V2 file for reference, but V2 currently ignores it.
+- `subagent_depth: 2` remains only in the V1 configuration; V2 has no equivalent global subagent-depth limit.
+
+The former V1 `small_model` setting is represented in V2 by assigning the same model directly to the hidden `title`, `summary`, and `compaction` maintenance agents.
+
 When V1 is no longer needed, remove `.config/opencode-v1/`, its symlink entry from `scripts/symlink.sh`, and the `opencode` wrapper from `.zshrc`. Then remove or repoint the `oc` alias to `opencode2`, delete the live `~/.config/opencode-v1` symlink, and optionally uninstall the V1 binary. Do not merge the V1 files back into the V2 configuration.
 
 ## Directory Structure
