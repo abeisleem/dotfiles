@@ -108,9 +108,8 @@ alias zshconfig="zed ~/.zshrc"
 opencode() {
   XDG_CONFIG_HOME="$HOME/.config/opencode-v1" command opencode "$@"
 }
-alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode"
-alias oc2="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode2"
-alias oci="oc run --interactive"
+alias oc1="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode"
+alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode2"
 alias lz="lazygit"
 
 # Add this line to source secrets if they exist:
