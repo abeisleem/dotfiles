@@ -3,6 +3,7 @@
   "model": "openai/gpt-5.6-sol",
   "autoupdate": true,
   "default_agent": "anti-glaze",
+  "shell": "/bin/zsh",
   "agents": {
     "anti-glaze": {
       "color": "#2f07d9"
