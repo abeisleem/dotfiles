@@ -181,10 +181,11 @@ function notifySession(notifier: Notifier, sessionID: string, title: string, bod
   })
 }
 
-async function notifyTaskFinished(notifier: Notifier, sessionID: string, state: SessionState, worktreeName: string) {
+async function notifyTaskFinished(notifier: Notifier, sessionID: string, state: SessionState, worktreeName: string, syncInfo: () => Promise<void>) {
   if (state.suppressIdleNotification || state.idleNotified) return
 
   state.idleNotified = true
+  await syncInfo()
   state.tmux = await getTmuxContext(state.worktree)
   notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
 }
@@ -286,6 +287,17 @@ export default Plugin.define({
       console.warn("tmux-notify: disabled because notifier failed to start", error)
     }
 
+    const syncSessionInfo = async (sessionID: string, state: SessionState) => {
+      try {
+        const info = await ctx.session.get({ sessionID })
+        state.title = info.title
+        state.parentID = info.parentID
+        state.worktree = info.location.directory
+      } catch {
+        // A session may disappear before an event queued for it is handled.
+      }
+    }
+
     const controller = new AbortController()
     const task = (async () => {
       while (!controller.signal.aborted) {
@@ -300,6 +312,7 @@ export default Plugin.define({
             const worktree = event.location?.directory || "OpenCode"
             const worktreeName = getWorktreeName(worktree)
             const state = getSessionState(sessionID, worktree)
+            const syncInfo = () => syncSessionInfo(sessionID, state)
             if (event.type === "session.created" || event.type === "session.updated") {
               const info = properties.info
               if (info?.title) state.title = info.title
@@ -309,15 +322,12 @@ export default Plugin.define({
               state.tmux = await getTmuxContext(worktree)
               continue
             }
+            if (event.type === "session.renamed") {
+              if (properties.title) state.title = properties.title
+              continue
+            }
             if (!state.loaded) {
-              try {
-                const info = await ctx.session.get({ sessionID })
-                state.title = info.title
-                state.parentID = info.parentID
-                state.worktree = info.location.directory
-              } catch {
-                // A session may disappear before an event queued for it is handled.
-              }
+              await syncInfo()
               state.loaded = true
             }
             if (!sharedNotifierStarted || notificationsDisabled || state.parentID) continue
@@ -332,7 +342,7 @@ export default Plugin.define({
               continue
             }
             if (event.type === "session.execution.succeeded") {
-              await notifyTaskFinished(notifier, sessionID, state, worktreeName)
+              await notifyTaskFinished(notifier, sessionID, state, worktreeName, syncInfo)
               continue
             }
             if (event.type === "session.status") {
@@ -342,25 +352,31 @@ export default Plugin.define({
                 state.suppressIdleNotification = false
                 state.idleNotified = false
               } else if (status === "idle") {
-                await notifyTaskFinished(notifier, sessionID, state, worktreeName)
+                await notifyTaskFinished(notifier, sessionID, state, worktreeName, syncInfo)
               }
               continue
             }
             if (event.type === "session.idle") {
-              await notifyTaskFinished(notifier, sessionID, state, worktreeName)
+              await notifyTaskFinished(notifier, sessionID, state, worktreeName, syncInfo)
               continue
             }
             if (event.type === "session.error") {
-              if (properties.error?.name === "MessageAbortedError") state.suppressIdleNotification = true
-              else notifySession(notifier, sessionID, state.title, "Error", worktreeName, state.tmux)
+              if (properties.error?.name === "MessageAbortedError") {
+                state.suppressIdleNotification = true
+              } else {
+                await syncInfo()
+                notifySession(notifier, sessionID, state.title, "Error", worktreeName, state.tmux)
+              }
               continue
             }
             if (event.type === "permission.asked") {
+              await syncInfo()
               state.tmux = await getTmuxContext(state.worktree)
               notifySession(notifier, sessionID, state.title, "Needs permission", worktreeName, state.tmux)
               continue
             }
             if (event.type === "question.asked") {
+              await syncInfo()
               notifySession(notifier, sessionID, state.title, "Needs your input", worktreeName, state.tmux)
             }
           }
