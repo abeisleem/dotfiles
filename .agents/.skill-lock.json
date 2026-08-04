@@ -526,6 +526,15 @@
       "skillFolderHash": "f63fde811a0215ab15f5b83bcaae9627ecacbe8e",
       "installedAt": "2026-07-23T09:45:34.369Z",
       "updatedAt": "2026-07-23T09:45:34.369Z"
+    },
+    "bro": {
+      "source": "dmmulroy/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dmmulroy/skills.git",
+      "skillPath": "bro/SKILL.md",
+      "skillFolderHash": "53c3b2c5dc11fe0ee4156468da27505df9239dc6",
+      "installedAt": "2026-08-04T10:03:31.251Z",
+      "updatedAt": "2026-08-04T10:03:31.251Z"
     }
   },
   "dismissed": {
