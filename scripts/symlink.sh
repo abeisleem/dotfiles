@@ -7,6 +7,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 ## Directories
 ln -s "$DOTFILES_DIR/.agents" ~/
 ln -s "$DOTFILES_DIR/.config/opencode" ~/.config
+ln -s "$DOTFILES_DIR/.config/opencode-v1" ~/.config
 
 ## Files
 ln -sf "$DOTFILES_DIR/.config/zed/settings.json" ~/.config/zed/settings.json

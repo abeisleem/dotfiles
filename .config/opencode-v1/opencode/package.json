@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "postinstall": "node ./scripts/setup-notifier-hook-bundle.mjs"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.17.8",
+    "notifier-hook": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}

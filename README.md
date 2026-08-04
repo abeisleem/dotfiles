@@ -24,6 +24,17 @@ cp .zshrc.local.example ~/.zshrc.local
 
 This file is automatically sourced by `.zshrc` if it exists and is **never tracked by git**.
 
+## OpenCode V1 and V2
+
+OpenCode V1 and V2 currently run side by side because their native configuration formats are incompatible:
+
+- `.config/opencode/` contains the native V2 configuration used by `opencode2`.
+- `.config/opencode-v1/opencode/` is a pre-V2 snapshot used only by V1.
+- The `opencode` shell function in `.zshrc` sets a V1-specific `XDG_CONFIG_HOME`, while `opencode2` uses the normal config directory.
+- `scripts/symlink.sh` installs both configuration directories.
+
+When V1 is no longer needed, remove `.config/opencode-v1/`, its symlink entry from `scripts/symlink.sh`, and the `opencode` wrapper from `.zshrc`. Then remove or repoint the `oc` alias to `opencode2`, delete the live `~/.config/opencode-v1` symlink, and optionally uninstall the V1 binary. Do not merge the V1 files back into the V2 configuration.
+
 ## Directory Structure
 
 ```
@@ -40,9 +51,10 @@ dotfiles/
 ├── .agents/
 │   └── skills/              # Skills installed from the `skills` npm CLI package
 ├── .config/
-│   └── opencode/
-│       ├── commands/        # Custom OpenCode commands
-│       └── skills/          # Custom handwritten OpenCode skills
+│   ├── opencode/             # Native OpenCode V2 configuration
+│   │   ├── commands/        # Custom OpenCode commands
+│   │   └── skills/          # Custom handwritten OpenCode skills
+│   └── opencode-v1/          # Isolated legacy OpenCode V1 configuration
 └── scripts/
     ├── brew-install.sh     # Installs Homebrew + packages
     └── symlink.sh          # Creates symlinks
@@ -57,6 +69,7 @@ dotfiles/
 │   │   ├── opencode-notifier.json -> dotfiles/.config/opencode/opencode-notifier.json
 │   │   ├── commands/ -> dotfiles/.config/opencode/commands/
 │   │   └── skills/ -> dotfiles/.config/opencode/skills/
+│   ├── opencode-v1/ -> dotfiles/.config/opencode-v1/
 │   └── zed/
 │       └── settings.json -> dotfiles/.config/zed/settings.json
 ├── .agents/
