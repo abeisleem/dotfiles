@@ -32,9 +32,11 @@ type SessionState = {
   idleNotified?: boolean
 }
 
+type Notifier = ReturnType<typeof createNotifier>
+
 const sessions = new Map<string, SessionState>()
 const notificationToSession = new Map<string, string>()
-let sharedNotifier: ReturnType<typeof createNotifier> | undefined
+let sharedNotifier: Notifier | undefined
 let sharedNotifierStart: Promise<void> | undefined
 let sharedNotifierStarted = false
 let sharedNotifierListenersAttached = false
@@ -167,7 +169,7 @@ async function showNotification(
   notificationToSession.set(id, sessionID)
 }
 
-function notifySession(notifier: ReturnType<typeof createNotifier>, sessionID: string, title: string, body: string, worktreeName: string, tmux?: TmuxContext) {
+function notifySession(notifier: Notifier, sessionID: string, title: string, body: string, worktreeName: string, tmux?: TmuxContext) {
   void showNotification(notifier, sessionID, title, body, worktreeName, tmux).catch((error) => {
     if (isMacOSNotificationPermissionError(error)) {
       notificationsDisabled = true
@@ -179,12 +181,20 @@ function notifySession(notifier: ReturnType<typeof createNotifier>, sessionID: s
   })
 }
 
+async function notifyTaskFinished(notifier: Notifier, sessionID: string, state: SessionState, worktreeName: string) {
+  if (state.suppressIdleNotification || state.idleNotified) return
+
+  state.idleNotified = true
+  state.tmux = await getTmuxContext(state.worktree)
+  notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
+}
+
 function isMacOSNotificationPermissionError(error: unknown) {
   const message = error instanceof Error ? error.message : String(error)
   return message.includes("UNErrorDomain error 1") || message.includes("not allowed for this application")
 }
 
-async function ensureNotifierStarted(notifier: ReturnType<typeof createNotifier>) {
+async function ensureNotifierStarted(notifier: Notifier) {
   if (!sharedNotifierStarted) {
     sharedNotifierStart ??= notifier.start().finally(() => {
       sharedNotifierStart = undefined
@@ -222,13 +232,6 @@ async function ensureNotifierBundle() {
   })
 }
 
-function suppressIdleAfterInterrupt(sessionID: string) {
-  const state = sessions.get(sessionID)
-  if (!state) return
-
-  state.suppressIdleNotification = true
-}
-
 function normalizeStatus(event: any) {
   const status = event?.data?.status ?? event?.properties?.status
   if (!status) return undefined
@@ -262,7 +265,8 @@ export default Plugin.define({
         if (reason === "default_action" && state) {
           void getTmuxContext(state.worktree)
             .then((context) => {
-              if (context ?? state.tmux) return focusTmux(context ?? state.tmux!)
+              const tmux = context ?? state.tmux
+              if (tmux) return focusTmux(tmux)
             })
             .catch((error) => console.warn("tmux-notify: failed to focus notification source", error))
         }
@@ -303,7 +307,6 @@ export default Plugin.define({
               state.worktree = worktree
               state.loaded = true
               state.tmux = await getTmuxContext(worktree)
-              sessions.set(sessionID, state)
               continue
             }
             if (!state.loaded) {
@@ -329,12 +332,7 @@ export default Plugin.define({
               continue
             }
             if (event.type === "session.execution.succeeded") {
-              if (!state.suppressIdleNotification && !state.idleNotified) {
-                state.idleNotified = true
-                state.tmux = await getTmuxContext(state.worktree)
-                sessions.set(sessionID, state)
-                notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
-              }
+              await notifyTaskFinished(notifier, sessionID, state, worktreeName)
               continue
             }
             if (event.type === "session.status") {
@@ -343,31 +341,22 @@ export default Plugin.define({
               if (status === "busy" || status === "pending") {
                 state.suppressIdleNotification = false
                 state.idleNotified = false
-              } else if (status === "idle" && !state.suppressIdleNotification && !state.idleNotified) {
-                state.idleNotified = true
-                state.tmux = await getTmuxContext(state.worktree)
-                sessions.set(sessionID, state)
-                notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
+              } else if (status === "idle") {
+                await notifyTaskFinished(notifier, sessionID, state, worktreeName)
               }
               continue
             }
             if (event.type === "session.idle") {
-              if (!state.suppressIdleNotification && !state.idleNotified) {
-                state.idleNotified = true
-                state.tmux = await getTmuxContext(state.worktree)
-                sessions.set(sessionID, state)
-                notifySession(notifier, sessionID, state.title, "Task finished", worktreeName, state.tmux)
-              }
+              await notifyTaskFinished(notifier, sessionID, state, worktreeName)
               continue
             }
             if (event.type === "session.error") {
-              if (properties.error?.name === "MessageAbortedError") suppressIdleAfterInterrupt(sessionID)
+              if (properties.error?.name === "MessageAbortedError") state.suppressIdleNotification = true
               else notifySession(notifier, sessionID, state.title, "Error", worktreeName, state.tmux)
               continue
             }
             if (event.type === "permission.asked") {
               state.tmux = await getTmuxContext(state.worktree)
-              sessions.set(sessionID, state)
               notifySession(notifier, sessionID, state.title, "Needs permission", worktreeName, state.tmux)
               continue
             }
