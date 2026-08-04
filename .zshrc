@@ -106,6 +106,7 @@ fi
 alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
 alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode"
+alias oc2="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode2"
 alias oci="oc run --interactive"
 alias lz="lazygit"
 

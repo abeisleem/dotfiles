@@ -1,25 +1,58 @@
 ---
 description: Organizes consulting engagement repos by capturing source material, extracting operational insight, tracking stakeholders and status, and supporting internal and client-facing deliverables.
 mode: all
-permission:
-  read: allow
-  glob: allow
-  grep: allow
-  list: allow
-  lsp: allow
-  question: allow
-  webfetch: allow
-  codesearch: allow
-  skill: allow
-  task: allow
-  edit: allow
-  bash:
-    "*": ask
-    "gws *": allow
-    "git *": allow
-    "date *": allow
-  external_directory: ask
-  doom_loop: deny
+permissions:
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: allow
+  - action: grep
+    resource: "*"
+    effect: allow
+  - action: list
+    resource: "*"
+    effect: allow
+  - action: lsp
+    resource: "*"
+    effect: allow
+  - action: question
+    resource: "*"
+    effect: allow
+  - action: webfetch
+    resource: "*"
+    effect: allow
+  - action: codesearch
+    resource: "*"
+    effect: allow
+  - action: skill
+    resource: "*"
+    effect: allow
+  - action: subagent
+    resource: "*"
+    effect: allow
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: ask
+  - action: shell
+    resource: "gws *"
+    effect: allow
+  - action: shell
+    resource: "git *"
+    effect: allow
+  - action: shell
+    resource: "date *"
+    effect: allow
+  - action: external_directory
+    resource: "*"
+    effect: ask
+  - action: doom_loop
+    resource: "*"
+    effect: deny
 ---
 
 # Engagement Operations Agent

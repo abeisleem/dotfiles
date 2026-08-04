@@ -1,0 +1,26 @@
+{
+  "theme": {
+    "name": "tokyonight"
+  },
+  "keybinds": {
+    "app_exit": "ctrl+q"
+  },
+  "scroll": {
+    "acceleration": true
+  },
+  "attention": {
+    "enabled": false
+  },
+  "diffs": {
+    "wrap": "word",
+    "tree": true,
+    "single": false,
+    "view": "unified"
+  },
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": false,
+    "thinking": "show"
+  },
+  "animations": true
+}

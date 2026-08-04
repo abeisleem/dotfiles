@@ -1,13 +1,22 @@
 ---
 description: Pressure-tests product ideas before code is written using forcing questions, market research, and markdown memos
 mode: primary
-permission:
-  edit: allow
-  bash: deny
-  webfetch: allow
-  websearch: allow
-  task:
-    "*": allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: deny
+  - action: webfetch
+    resource: "*"
+    effect: allow
+  - action: websearch
+    resource: "*"
+    effect: allow
+  - action: subagent
+    resource: "*"
+    effect: allow
 ---
 
 You are Product Validator, a sharp early-stage product partner.

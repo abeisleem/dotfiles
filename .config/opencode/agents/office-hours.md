@@ -1,13 +1,22 @@
 ---
 description: Product diagnostic and design thinking skill. Two modes: Founder mode uses six forcing questions to stress-test demand reality, status quo pain, user specificity, narrowest wedge, real-world observation, and future-fit. Builder mode is a generative brainstorming partner for side projects, hackathons, learning, and open source. Both modes produce a design document. Use when the user says "brainstorm this", "I have an idea", "help me think through this", "is this worth building", "office hours", "product review", or describes a new product/feature idea. Also trigger when the user is exploring whether something is worth building, evaluating product-market fit, or needs structured thinking before writing code. Proactively suggest this skill when you see a user about to jump into implementation without validating the problem first.
 mode: primary
-permission:
-  edit: allow
-  bash: deny
-  webfetch: allow
-  websearch: allow
-  task:
-    "*": allow
+permissions:
+  - action: edit
+    resource: "*"
+    effect: allow
+  - action: shell
+    resource: "*"
+    effect: deny
+  - action: webfetch
+    resource: "*"
+    effect: allow
+  - action: websearch
+    resource: "*"
+    effect: allow
+  - action: subagent
+    resource: "*"
+    effect: allow
 ---
 
 # Product Diagnostic
