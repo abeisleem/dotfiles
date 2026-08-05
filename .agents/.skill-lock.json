@@ -535,6 +535,15 @@
       "skillFolderHash": "53c3b2c5dc11fe0ee4156468da27505df9239dc6",
       "installedAt": "2026-08-04T10:03:31.251Z",
       "updatedAt": "2026-08-04T10:03:31.251Z"
+    },
+    "convert-documents-to-markdown": {
+      "source": "firecrawl/anydoc",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/firecrawl/anydoc.git",
+      "skillPath": "skills/convert-documents-to-markdown/SKILL.md",
+      "skillFolderHash": "eb3266eddb4cb0577f0230604189c126274e089f",
+      "installedAt": "2026-08-05T07:10:35.198Z",
+      "updatedAt": "2026-08-05T07:10:35.198Z"
     }
   },
   "dismissed": {
