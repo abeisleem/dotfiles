@@ -63,6 +63,8 @@ cask "slack"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
 cargo "terminal-control"
+npm "@firecrawl/anydoc-darwin-arm64"
+npm "@firecrawl/anydoc"
 npm "@opencode-ai/cli"
 npm "executor"
 npm "skills"
