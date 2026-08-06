@@ -1,3 +1,5 @@
+- For medium-sized, multi-step tasks, proactively use `task` subagents for independent investigation or implementation that can run in parallel. Keep trivial or tightly coupled work in the main session, and retain final integration and verification there.
+
 - strive to not use use jargon and speak coherently. state simply and concisely, like one human talking to another.
 
 - if you need to install a package to the machine for any reason, defer to using `brew install` as a first option. after installation to complete the task, list them all at the end of your message and prompt the user to determine if they would like to uninstall any of them
