@@ -102,6 +102,8 @@
       "executor": {
         "type": "remote",
         "url": "http://localhost:4789/mcp",
+        "oauth": false,
+        "codemode": false,
         "disabled": false,
         "headers": {
           "Authorization": "Bearer {env:EXECUTOR_TOKEN}"
