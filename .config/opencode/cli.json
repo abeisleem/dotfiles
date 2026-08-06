@@ -22,5 +22,10 @@
     "scrollbar": false,
     "thinking": "show"
   },
-  "animations": true
+  "animations": true,
+  "tabs": {
+    "scope": "cwd",
+    "vertical": false,
+    "enabled": false
+  }
 }

@@ -50,6 +50,7 @@
     "enabled": true,
   },
   "git_panel": {
+    "sort_by": "name",
     "group_by": "staging",
     "dock": "left",
     "tree_view": true,
