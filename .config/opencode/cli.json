@@ -20,12 +20,20 @@
   "session": {
     "sidebar": "auto",
     "scrollbar": false,
-    "thinking": "show"
+    "thinking": "show",
+    "markdown": "rendered",
+    "grouping": "auto"
   },
   "animations": true,
   "tabs": {
     "scope": "cwd",
     "vertical": false,
     "enabled": false
+  },
+  "prompt": {
+    "paste": "full"
+  },
+  "terminal": {
+    "copy_on_select": true
   }
 }
