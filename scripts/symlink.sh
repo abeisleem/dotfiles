@@ -11,6 +11,7 @@ ln -s "$DOTFILES_DIR/.config/opencode-v1" ~/.config
 
 ## Files
 ln -sf "$DOTFILES_DIR/.config/zed/settings.json" ~/.config/zed/settings.json
+ln -sf "$DOTFILES_DIR/.config/zed/keymap.json" ~/.config/zed/keymap.json
 ln -sf "$DOTFILES_DIR/.gitconfig" ~/.gitconfig
 ln -sf "$DOTFILES_DIR/.homebrew/trust.json" ~/.homebrew/trust.json
 ln -sf "$DOTFILES_DIR/.gitignore" ~/.gitignore
