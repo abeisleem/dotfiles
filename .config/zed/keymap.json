@@ -19,7 +19,7 @@
     },
   },
   {
-    "context": "(FileDiff || Editor) && extension == md",
+    "context": "Editor && extension == md",
     "bindings": {
       "alt-cmd-v": "markdown::OpenPreviewToTheSide"
     }

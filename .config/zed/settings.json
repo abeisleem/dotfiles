@@ -50,6 +50,8 @@
     "enabled": true,
   },
   "git_panel": {
+    "entry_primary_click_action": "file_diff",
+    "button": true,
     "sort_by": "name",
     "group_by": "staging",
     "dock": "left",
