@@ -28,7 +28,7 @@
   "tabs": {
     "scope": "cwd",
     "vertical": false,
-    "enabled": false
+    "enabled": true
   },
   "prompt": {
     "paste": "full"
