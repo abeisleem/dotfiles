@@ -25,6 +25,7 @@ type SessionState = {
   worktreeName: string
   loaded?: boolean
   parentID?: string
+  parentResolved?: boolean
   tmux?: TmuxContext
   notificationId?: string
   lastStatus?: string
@@ -292,6 +293,7 @@ export default Plugin.define({
         const info = await ctx.session.get({ sessionID })
         state.title = info.title
         state.parentID = info.parentID
+        state.parentResolved = true
         state.worktree = info.location.directory
       } catch {
         // A session may disappear before an event queued for it is handled.
@@ -313,10 +315,18 @@ export default Plugin.define({
             const worktreeName = getWorktreeName(worktree)
             const state = getSessionState(sessionID, worktree)
             const syncInfo = () => syncSessionInfo(sessionID, state)
+            if (event.type === "session.forked") {
+              state.parentID = properties.parentID
+              state.parentResolved = true
+              continue
+            }
             if (event.type === "session.created" || event.type === "session.updated") {
               const info = properties.info
               if (info?.title) state.title = info.title
-              state.parentID = info?.parentID
+              if (info) {
+                state.parentID = info.parentID
+                state.parentResolved = true
+              }
               state.worktree = worktree
               state.loaded = true
               state.tmux = await getTmuxContext(worktree)
@@ -326,7 +336,7 @@ export default Plugin.define({
               if (properties.title) state.title = properties.title
               continue
             }
-            if (!state.loaded) {
+            if (!state.loaded || !state.parentResolved) {
               await syncInfo()
               state.loaded = true
             }
