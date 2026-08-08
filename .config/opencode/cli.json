@@ -9,7 +9,8 @@
     "acceleration": true
   },
   "attention": {
-    "enabled": false
+    "enabled": true,
+    "sound": false
   },
   "diffs": {
     "wrap": "word",

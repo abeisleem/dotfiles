@@ -1,4 +1,4 @@
-- For medium-sized, multi-step tasks, proactively use `task` subagents for independent investigation or implementation that can run in parallel. Keep trivial or tightly coupled work in the main session, and retain final integration and verification there.
+- For medium-sized, multi-step tasks, proactively use `task` subagents for independent investigation or implementation that can run in parallel. Keep trivial or tightly coupled work in the main session, and retain final integration and verification there. For larger-sized, multi iteration and more effective as interactive tasks, use the opencode2 api to create new sessions for the user to work and steer in a dedicated session. 
 
 - strive to not use use jargon and speak coherently. state simply and concisely, like one human talking to another.
 
