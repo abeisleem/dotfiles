@@ -3,7 +3,8 @@
   "permission": {
     "external_directory": {
       "~/.config/opencode/**": "allow",
-      "~/.local/share/opencode/log/**": "allow"
+      "~/.local/share/opencode/log/**": "allow",
+      "~/repos/**": "allow",
     }
   },
 }
