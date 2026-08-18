@@ -73,6 +73,9 @@
     "model_parameters": [],
   },
   "language_models": {
+    "opencode": {
+      "show_go_models": false
+    },
     "openai_compatible": {},
   },
   "telemetry": {
