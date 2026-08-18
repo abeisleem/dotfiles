@@ -291,7 +291,7 @@ export default Plugin.define({
     const syncSessionInfo = async (sessionID: string, state: SessionState) => {
       try {
         const info = await ctx.session.get({ sessionID })
-        state.title = info.title
+        state.title = info.title ?? state.title
         state.parentID = info.parentID
         state.parentResolved = true
         state.worktree = info.location.directory
@@ -304,9 +304,11 @@ export default Plugin.define({
     const task = (async () => {
       while (!controller.signal.aborted) {
         try {
-          for await (const event of ctx.event.subscribe({
-            signal: controller.signal,
-          })) {
+            for await (const rawEvent of ctx.event.subscribe({
+              signal: controller.signal,
+            })) {
+              // Keep handling legacy server events emitted by older services.
+              const event: any = rawEvent
             const properties: any = event.data
             const sessionID = properties?.sessionID
             if (!sessionID) continue
