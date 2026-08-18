@@ -3,7 +3,7 @@
     "name": "tokyonight"
   },
   "keybinds": {
-    "app_exit": "ctrl+q"
+    "app.exit": "ctrl+q"
   },
   "scroll": {
     "acceleration": true
@@ -20,21 +20,26 @@
   },
   "session": {
     "sidebar": "auto",
-    "scrollbar": false,
+    "scrollbar": true,
     "thinking": "show",
     "markdown": "rendered",
-    "grouping": "auto"
+    "grouping": "auto",
+    "image_preview": false,
+    "new_location": "launch"
   },
   "animations": true,
   "tabs": {
     "scope": "cwd",
     "vertical": false,
-    "enabled": true
+    "enabled": true,
+    "layout": "horizontal"
   },
   "prompt": {
-    "paste": "full"
+    "paste": "full",
+    "image_preview": false
   },
   "terminal": {
-    "copy_on_select": true
+    "title": true,
+    "copy": "select"
   }
 }
