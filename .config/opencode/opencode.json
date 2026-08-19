@@ -80,24 +80,10 @@
   ],
   "mcp": {
     "servers": {
-      "chrome-devtools": {
-        "type": "local",
-        "command": ["npx", "-y", "chrome-devtools-mcp@latest"],
-        "disabled": true
-      },
-      "shadcn": {
-        "type": "local",
-        "command": ["npx", "shadcn@latest", "mcp"],
-        "disabled": true
-      },
       "supabase": {
         "type": "remote",
         "url": "http://localhost:54321/mcp",
         "disabled": true
-      },
-      "gh_grep": {
-        "type": "remote",
-        "url": "https://mcp.grep.app"
       },
       "executor": {
         "type": "remote",
