@@ -22,10 +22,26 @@
     "disable_paste_summary": true
   },
   "permissions": [
-    { "action": "external_directory", "resource": "~/.agents/skills/**", "effect": "allow" },
-    { "action": "external_directory", "resource": "/tmp/**", "effect": "allow" },
-    { "action": "external_directory", "resource": "**/.ssh/**", "effect": "deny" },
-    { "action": "external_directory", "resource": "~/.local/share/opencode/mcp-auth.json", "effect": "deny" },
+    {
+      "action": "external_directory",
+      "resource": "~/.agents/skills/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/tmp/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "**/.ssh/**",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.local/share/opencode/mcp-auth.json",
+      "effect": "deny"
+    },
     { "action": "read", "resource": "*", "effect": "allow" },
     { "action": "read", "resource": "*.env", "effect": "deny" },
     { "action": "read", "resource": "*.env.*", "effect": "deny" },
@@ -41,7 +57,11 @@
     { "action": "read", "resource": "*.key", "effect": "deny" },
     { "action": "read", "resource": "**/.aws/**", "effect": "deny" },
     { "action": "read", "resource": "**/.ssh/**", "effect": "deny" },
-    { "action": "read", "resource": "~/.local/share/opencode/mcp-auth.json", "effect": "deny" },
+    {
+      "action": "read",
+      "resource": "~/.local/share/opencode/mcp-auth.json",
+      "effect": "deny"
+    },
     { "action": "shell", "resource": "*", "effect": "allow" },
     { "action": "shell", "resource": "printenv *", "effect": "deny" },
     { "action": "shell", "resource": "env", "effect": "deny" },
@@ -99,5 +119,8 @@
   },
   "websearch": {
     "provider": "random"
+  },
+  "experimental": {
+    "subagent_depth": 2
   }
 }
