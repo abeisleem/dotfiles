@@ -19,7 +19,7 @@
     "view": "unified"
   },
   "session": {
-    "sidebar": "auto",
+    "sidebar": "hide",
     "scrollbar": true,
     "thinking": "show",
     "markdown": "rendered",
@@ -32,7 +32,7 @@
     "scope": "cwd",
     "vertical": false,
     "enabled": true,
-    "layout": "horizontal"
+    "layout": "vertical"
   },
   "prompt": {
     "paste": "full",
@@ -41,5 +41,9 @@
   "terminal": {
     "title": true,
     "copy": "select"
+  },
+  "debug": {
+    "devtools": false,
+    "turn_tokens": false
   }
 }
