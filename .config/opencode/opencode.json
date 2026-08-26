@@ -18,9 +18,6 @@
       "model": "opencode/deepseek-v4-flash-free"
     }
   },
-  "experimental": {
-    "disable_paste_summary": true
-  },
   "permissions": [
     {
       "action": "external_directory",
@@ -81,13 +78,11 @@
     { "action": "shell", "resource": "cat **/.aws/**", "effect": "deny" },
     { "action": "shell", "resource": "cat **/.ssh/**", "effect": "deny" },
     { "action": "shell", "resource": "rm *", "effect": "deny" },
-    { "action": "shell", "resource": "git push", "effect": "ask" },
-    { "action": "shell", "resource": "brew install", "effect": "ask" },
+    { "action": "shell", "resource": "brew install *", "effect": "ask" },
     { "action": "edit", "resource": "*", "effect": "allow" },
     { "action": "glob", "resource": "*", "effect": "allow" },
     { "action": "grep", "resource": "*", "effect": "allow" },
     { "action": "list", "resource": "*", "effect": "allow" },
-    { "action": "lsp", "resource": "*", "effect": "allow" },
     { "action": "todoread", "resource": "*", "effect": "allow" },
     { "action": "todowrite", "resource": "*", "effect": "allow" },
     { "action": "question", "resource": "*", "effect": "allow" },
@@ -96,7 +91,6 @@
     { "action": "webfetch", "resource": "*", "effect": "allow" },
     { "action": "websearch", "resource": "*", "effect": "allow" },
     { "action": "codesearch", "resource": "*", "effect": "allow" },
-    { "action": "doom_loop", "resource": "*", "effect": "ask" }
   ],
   "mcp": {
     "servers": {
