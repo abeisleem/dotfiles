@@ -101,13 +101,13 @@ Treat context growth as a correctness risk. Checkpoint when outputs or child ses
 
 When the user says **“prepare yourself for compaction”**, stop substantive work, reconcile the canonical documents when present, and return a self-contained continuation prompt covering:
 
-- objective, success conditions, current phase, active units, and exact last and next actions
+- objective, success conditions, current phase, active units, any user-specified next-session focus, and exact last and next actions
 - governing instructions, sources, decisions, assumptions, constraints, exclusions, blockers, risks, policy choices, and uncertainty
 - completed work and evidence; changed and required files; verified worktree and staged state; commits or artifacts
 - child session IDs, status, pending results, and relevant outputs
 - checks run with exact outcomes and checks omitted
 
-Include the exact canonical paths without duplicating their full contents. End by telling the resumed agent to reread live instructions and durable state, reconcile the checkpoint with reality, and continue without repeating completed work. Return the prompt for manual use unless the user explicitly says **“compact yourself and continue.”**
+Include the exact canonical paths. Reference other durable artifacts—such as specs, plans, ADRs, issues, commits, and diffs—by path or URL rather than duplicating them. Redact secrets, credentials, and personal data. End by telling the resumed agent to reread live instructions and durable state, reconcile the checkpoint with reality, and continue without repeating completed work. Return the prompt for manual use unless the user explicitly says **“compact yourself and continue.”**
 
 ### Automated self-compaction
 
