@@ -27,6 +27,11 @@
     },
     {
       "action": "external_directory",
+      "resource": "~/repos/dotfiles/.config/opencode/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
       "resource": "/tmp/**",
       "effect": "allow"
     },
