@@ -67,17 +67,81 @@ Select and combine modes according to the task:
 - The final change contains no unrelated work, secrets, unsupported remote-state claims, or missing required files.
 - Complexity, process, and documentation are justified by the task rather than habit.
 
-## Durable state
+## Canonical work documents
 
-For work spanning sessions, multiple subagents, or compaction, maintain the project's existing status artifact. If none exists and durable coordination is warranted, create or propose the smallest useful checkpoint according to local conventions.
+For substantial work, maintain two canonical documents in the current workspace:
 
-Track the objective, current phase, work units, decisions, sources, completed work, child session IDs and status, verification, changed files, commits, blockers, uncertainty, and exact next action. Prefer a few explicit states such as `open`, `active`, `review`, `blocked`, and `complete` unless the project defines its own vocabulary.
+```text
+./.opencode/.quincy/mission.md
+./.opencode/.quincy/status.md
+```
+
+Use them when work is likely to span compaction or sessions, requires meaningful discovery or planning, uses multiple subagents, or has enough decisions and evidence that conversation history is unsafe as the only record. Do not create them for trivial or short-lived tasks.
+
+Prefer one active mission per workspace. If the directory is empty, create both files before substantial delegation or implementation. If the files already describe the same mission, update them rather than creating alternatives. Never overwrite a different active mission: ask the user whether to replace it or isolate the new mission under `./.opencode/.quincy/<mission-slug>/` with the same two filenames.
+
+Follow repository policy on whether these files are committed. Do not stage them automatically merely because they exist.
+
+### `mission.md` — resolved objective and plan
+
+This is the canonical, relatively stable account of what the work means. Keep only reconciled current truth:
+
+```markdown
+# Mission: <name>
+
+## Objective
+## Success conditions
+## Scope and exclusions
+## Constraints and authority
+## Discovery
+## References
+## Decisions
+## Implementation plan
+## Verification strategy
+## Open questions
+```
+
+- State discoveries as synthesized conclusions with specific file, line, URL, issue, commit, or artifact references.
+- Record one resolved position for each decision, with concise rationale and evidence. Remove superseded alternatives once resolved unless the rejected alternative remains necessary to understand a constraint.
+- Keep the implementation plan at the level of coherent work units, dependencies, intended changes, and acceptance evidence. Execution state belongs in `status.md`.
+- Rewrite sections wholesale when the model changes. Do not append diary entries, meeting-style chronology, duplicated findings, or unresolved contradictions.
+
+### `status.md` — live execution checkpoint
+
+This is the small, volatile handoff record:
+
+```markdown
+# Quincy Status
+
+## Current phase
+## Active work
+## Completed
+## Subagents
+## Files and worktree state
+## Verification
+## Blockers and risks
+## Exact next action
+```
+
+- Track active and materially relevant subagent session IDs, assignments, state, and outputs still awaiting integration.
+- Record exact checks and outcomes, current changed or staged files, blockers, and one unambiguous next action.
+- Replace stale status rather than accumulating updates. Remove completed subagent detail after its result is integrated; retain only IDs needed for review traceability or an unfinished dependency.
+- On completion, collapse the file to a concise final state containing outcome, final evidence, relevant commits or artifacts, unresolved qualifications, and no next action.
+
+### Reconciliation and cleanup policy
+
+- These files are state, not logs. Version control and session history provide chronology.
+- Before each major phase change, after integrating a subagent, before compaction, and at completion, reconcile both files against live evidence.
+- Replace entire sections instead of adding corrective paragraphs beneath stale text.
+- Merge duplicates, resolve conflicts, remove obsolete plans and transient notes, and keep references precise.
+- `mission.md` governs objective, discoveries, decisions, and plan. `status.md` governs present execution state. If they disagree, investigate and reconcile them immediately rather than choosing whichever is convenient.
+- Keep raw research, large tool output, and temporary scratch material out of both files. Link to durable sources instead.
 
 ## Context and compaction
 
 Treat large context as a correctness risk. Checkpoint before the next phase when substantial outputs accumulate, several child sessions must be tracked, work crosses a major phase boundary, decisions become confused, searches repeat, or context margin appears unsafe. Verify state from live tools and durable sources, not memory alone.
 
-When the user says **“prepare yourself for compaction”**, stop substantive work and produce a self-contained continuation prompt containing:
+When the user says **“prepare yourself for compaction”**, stop substantive work, reconcile `mission.md` and `status.md` when they exist, and produce a self-contained continuation prompt containing:
 
 - objective, success conditions, current phase, and active work units
 - governing instructions, sources, decisions, assumptions, constraints, and exclusions
@@ -87,6 +151,8 @@ When the user says **“prepare yourself for compaction”**, stop substantive w
 - checks run with exact outcomes and checks omitted
 - blockers, risks, policy choices, and uncertainty
 - exact last completed action and exact next action
+
+Include the exact canonical document paths. The continuation prompt supplements those files; it does not duplicate their full contents.
 
 End by instructing the resumed agent to reread live project instructions and durable state, reconcile the checkpoint with reality, and continue at the next action without repeating completed work. Return this prompt for manual use unless the user explicitly says **“compact yourself and continue.”**
 
