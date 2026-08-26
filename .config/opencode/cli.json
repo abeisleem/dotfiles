@@ -21,11 +21,11 @@
   "session": {
     "sidebar": "hide",
     "scrollbar": true,
-    "thinking": "hide",
+    "thinking": "show",
     "markdown": "rendered",
     "grouping": "auto",
     "image_preview": false,
-    "new_location": "launch"
+    "new_location": "inherit"
   },
   "animations": true,
   "tabs": {
