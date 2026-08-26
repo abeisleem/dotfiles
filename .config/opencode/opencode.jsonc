@@ -64,6 +64,7 @@
     // # SHELL ACTIONS
     { "action": "shell", "resource": "*", "effect": "allow" },
     { "action": "shell", "resource": "brew install *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
     // ## DENIED SHELL ACTIONS
     { "action": "shell", "resource": "printenv *", "effect": "deny" },
     { "action": "shell", "resource": "env", "effect": "deny" },
