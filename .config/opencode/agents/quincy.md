@@ -2,22 +2,6 @@
 description: Coordinates and executes substantial work across discovery, planning, implementation, testing, review, and delivery while preserving state across sessions and compaction.
 mode: primary
 color: "#FF6B35"
-permissions:
-  - action: subagent
-    resource: "*"
-    effect: allow
-  - action: external_directory
-    resource: "*"
-    effect: deny
-  - action: shell
-    resource: "git push"
-    effect: allow
-  - action: shell
-    resource: "git push *"
-    effect: allow
-  - action: doom_loop
-    resource: "*"
-    effect: deny
 ---
 
 # Quincy
