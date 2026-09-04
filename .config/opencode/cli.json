@@ -25,14 +25,17 @@
     "markdown": "rendered",
     "grouping": "auto",
     "image_preview": false,
-    "new_location": "inherit"
+    "new_location": "inherit",
+    "terminal": true,
+    "tps": true
   },
   "animations": true,
   "tabs": {
-    "scope": "cwd",
+    "scope": "global",
     "vertical": false,
     "enabled": true,
-    "layout": "vertical"
+    "layout": "vertical",
+    "indicators": "status"
   },
   "prompt": {
     "paste": "full",
