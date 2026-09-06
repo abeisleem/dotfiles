@@ -10,7 +10,7 @@
   },
   "attention": {
     "enabled": true,
-    "sound": false
+    "sound": true
   },
   "diffs": {
     "wrap": "word",
