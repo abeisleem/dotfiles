@@ -7,18 +7,6 @@
 // from the command palette.
 [
   {
-    "context": "Editor && extension == md",
-    "bindings": {
-      "alt-cmd-v": "markdown::OpenPreviewToTheSide"
-    }
-  },
-  {
-    "context": "Editor && extension == md",
-    "unbind": {
-      "cmd-k v": "markdown::OpenPreviewToTheSide"
-    }
-  },
-  {
     "context": "Workspace",
     "bindings": {
       "cmd-shift-g": "git_panel::ToggleFocus"
@@ -57,6 +45,18 @@
     "context": "Workspace",
     "unbind": {
       "ctrl-cmd-w": "git::Worktree"
+    }
+  },
+  {
+    "context": "Editor && extension == md",
+    "bindings": {
+      "alt-cmd-v": "markdown::OpenPreview"
+    }
+  },
+  {
+    "context": "Editor && extension == md",
+    "unbind": {
+      "cmd-shift-v": "markdown::OpenPreview"
     }
   }
 ]
