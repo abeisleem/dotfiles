@@ -48,8 +48,6 @@ cask "codex-app"
 cask "discord"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# AI-powered notepad for meetings
-cask "granola"
 # Voice-to-text transcription and paste tool
 cask "kitlangton-hex"
 # Minimal installer for conda
@@ -67,4 +65,3 @@ npm "@firecrawl/anydoc-darwin-arm64"
 npm "@firecrawl/anydoc"
 npm "@opencode-ai/cli"
 npm "executor"
-npm "skills"
