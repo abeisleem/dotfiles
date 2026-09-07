@@ -173,3 +173,18 @@ fi
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# Connect the local OpenCode V2 client to cortx-server over Tailscale.
+# Use OPENCODE_PASSWORD if configured; otherwise prompt without echoing it.
+oc-cortx() {
+  local cortx_password="${OPENCODE_PASSWORD:-}"
+  if [[ -z "$cortx_password" ]]; then
+    read -rs 'cortx_password?Cortx OpenCode password: ' || return 1
+    printf '\n'
+  fi
+  if [[ -z "$cortx_password" ]]; then
+    printf 'A server password is required.\n' >&2
+    return 1
+  fi
+  OPENCODE_PASSWORD="$cortx_password" command opencode2 --server http://cortx-server:4096 "$@"
+}
