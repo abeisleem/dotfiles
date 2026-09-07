@@ -105,11 +105,7 @@ fi
 # Example aliases
 alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
-opencode() {
-  XDG_CONFIG_HOME="$HOME/.config/opencode-v1" command opencode "$@"
-}
-alias oc1="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode"
-alias oc="OPENCODE_EXPERIMENTAL_PLAN_MODE=1 OPENCODE_EXPERIMENTAL_WORKSPACES=1 opencode2"
+alias oc="opencode2"
 alias lz="lazygit"
 
 # Add this line to source secrets if they exist:
@@ -145,11 +141,11 @@ brew-mine() {
 # Get a bash command using opencode AI
 please() {
   local plat=$(uname -s)
-  if ! command -v opencode &> /dev/null; then
-    echo "opencode not found. Install with: brew install anomalyco/tap/opencode"
+  if ! command -v opencode2 &> /dev/null; then
+    echo "opencode2 not found. Install with: npm install -g @opencode-ai/cli@beta"
     return 1
   fi
-  opencode run \
+  opencode2 run \
     --agent plan \
     "What is the $plat bash command to $@? Only return the command to run itself, do not describe anything. Only use commands and executables that are common on most $plat systems. Do not quote the response and do not use markdown."
 }
@@ -170,33 +166,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-#compdef opencode
-###-begin-opencode-completions-###
-#
-# yargs command completion script
-#
-# Installation: opencode completion >> ~/.zshrc
-#    or opencode completion >> ~/.zprofile on OSX.
-#
-_opencode_yargs_completions()
-{
-  local reply
-  local si=$IFS
-  IFS=$'
-' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" opencode --get-yargs-completions "${words[@]}"))
-  IFS=$si
-  if [[ ${#reply} -gt 0 ]]; then
-    _describe 'values' reply
-  else
-    _default
-  fi
-}
-if [[ "'${zsh_eval_context[-1]}" == "loadautofunc" ]]; then
-  _opencode_yargs_completions "$@"
-else
-  compdef _opencode_yargs_completions opencode
+if command -v opencode2 &> /dev/null; then
+  source <(opencode2 --completions zsh)
 fi
-###-end-opencode-completions-###
 
 
 # Set up fzf key bindings and fuzzy completion

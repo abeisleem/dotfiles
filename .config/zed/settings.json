@@ -7,11 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent_servers": {
-    "opencode": {
-      "type": "registry"
-    }
-  },
   "project_panel": {
     "dock": "left",
   },
@@ -62,20 +57,9 @@
   "buffer_font_family": ".ZedMono",
   "agent": {
     "dock": "right",
-    "inline_assistant_model": {
-      "provider": "OpenCode",
-      "model": "minimax-m2.1",
-    },
-    "default_model": {
-      "provider": "OpenCode",
-      "model": "claude-haiku-4-5",
-    },
     "model_parameters": [],
   },
   "language_models": {
-    "opencode": {
-      "show_go_models": false
-    },
     "openai_compatible": {},
   },
   "telemetry": {

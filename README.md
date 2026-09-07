@@ -24,23 +24,15 @@ cp .zshrc.local.example ~/.zshrc.local
 
 This file is automatically sourced by `.zshrc` if it exists and is **never tracked by git**.
 
-## OpenCode V1 and V2
+## OpenCode V2
 
-OpenCode V1 and V2 currently run side by side because their native configuration formats are incompatible:
+OpenCode V2 is installed globally with npm and run as `opencode2`. The `oc` shell alias also runs V2.
 
-- `.config/opencode/` contains the native V2 configuration used by `opencode2`.
-- `.config/opencode-v1/opencode/` is a pre-V2 snapshot used only by V1.
-- The `opencode` shell function in `.zshrc` sets a V1-specific `XDG_CONFIG_HOME`, while `opencode2` uses the normal config directory.
-- `scripts/symlink.sh` installs both configuration directories.
+```bash
+npm install -g @opencode-ai/cli@beta
+```
 
-Two V1 settings do not have native V2 equivalents:
-
-- `experimental.disable_paste_summary` is retained in the V2 file for reference, but V2 currently ignores it.
-- `subagent_depth: 2` remains only in the V1 configuration; V2 has no equivalent global subagent-depth limit.
-
-The former V1 `small_model` setting is represented in V2 by assigning the same model directly to the hidden `title`, `summary`, and `compaction` maintenance agents.
-
-When V1 is no longer needed, remove `.config/opencode-v1/`, its symlink entry from `scripts/symlink.sh`, and the `opencode` wrapper from `.zshrc`. Then remove or repoint the `oc` alias to `opencode2`, delete the live `~/.config/opencode-v1` symlink, and optionally uninstall the V1 binary. Do not merge the V1 files back into the V2 configuration.
+`.config/opencode/` contains the native V2 configuration used by OpenCode. `scripts/symlink.sh` installs it at `~/.config/opencode`.
 
 ## Directory Structure
 
@@ -61,7 +53,6 @@ dotfiles/
 │   ├── opencode/             # Native OpenCode V2 configuration
 │   │   ├── commands/        # Custom OpenCode commands
 │   │   └── skills/          # Custom handwritten OpenCode skills
-│   └── opencode-v1/          # Isolated legacy OpenCode V1 configuration
 └── scripts/
     ├── brew-install.sh     # Installs Homebrew + packages
     └── symlink.sh          # Creates symlinks
@@ -76,7 +67,6 @@ dotfiles/
 │   │   ├── opencode-notifier.json -> dotfiles/.config/opencode/opencode-notifier.json
 │   │   ├── commands/ -> dotfiles/.config/opencode/commands/
 │   │   └── skills/ -> dotfiles/.config/opencode/skills/
-│   ├── opencode-v1/ -> dotfiles/.config/opencode-v1/
 │   └── zed/
 │       └── settings.json -> dotfiles/.config/zed/settings.json
 ├── .agents/

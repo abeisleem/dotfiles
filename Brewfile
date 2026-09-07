@@ -34,8 +34,6 @@ brew "tree"
 brew "yt-dlp"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Memory training application
