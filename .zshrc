@@ -107,6 +107,7 @@ alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
 alias oc="opencode2"
 alias lz="lazygit"
+alias exe="executor"
 
 # Add this line to source secrets if they exist:
 if [[ -f ~/.zshrc.local ]]; then
