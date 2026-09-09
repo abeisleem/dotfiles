@@ -189,3 +189,6 @@ oc-cortx() {
   fi
   OPENCODE_PASSWORD="$cortx_password" command opencode2 --server http://cortx-server:4096 "$@"
 }
+
+# bun completions
+[ -s "/Users/abe/.bun/_bun" ] && source "/Users/abe/.bun/_bun"
