@@ -48,6 +48,8 @@ cask "discord"
 cask "gcloud-cli"
 # Voice-to-text transcription and paste tool
 cask "kitlangton-hex"
+# App to manage software development and track bugs
+cask "linear"
 # Minimal installer for conda
 cask "miniconda"
 # Knowledge base that works on top of a local folder of plain text Markdown files
