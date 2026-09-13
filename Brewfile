@@ -46,8 +46,8 @@ cask "codex-app"
 cask "discord"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# Voice-to-text transcription and paste tool
-cask "kitlangton-hex"
+# Local-first voice dictation
+cask "anomalyco/tap/hex", trusted: true
 # App to manage software development and track bugs
 cask "linear"
 # Minimal installer for conda
