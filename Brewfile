@@ -35,7 +35,7 @@ brew "yt-dlp"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Stripe CLI utility
-brew "stripe/stripe-cli/stripe"
+brew "stripe/stripe-cli/stripe", trusted: true
 # Memory training application
 cask "anki"
 # Cross platform SQL editor and database management app
