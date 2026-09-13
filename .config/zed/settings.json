@@ -37,12 +37,22 @@
         },
         {
           "paths": [
+            "/home/abe/repos/ana"
+          ]
+        },
+        {
+          "paths": [
             "/home/abe/repos/cortx-server"
           ]
         },
         {
           "paths": [
-            "/home/abe/repos/pravosllc/pikl"
+            "/home/abe/repos/pravosllc/optimise-team-ops"
+          ]
+        },
+        {
+          "paths": [
+            "/home/abe/repos/pravosllc/pikl-partner-segmentation"
           ]
         }
       ]
