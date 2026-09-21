@@ -105,7 +105,7 @@ fi
 # Example aliases
 alias zshconfig="zed ~/.zshrc"
 # alias ohmyzsh="zed ~/.oh-my-zsh"
-alias oc="opencode2"
+alias oc="opencode"
 alias lz="lazygit"
 alias exe="executor"
 
@@ -142,11 +142,11 @@ brew-mine() {
 # Get a bash command using opencode AI
 please() {
   local plat=$(uname -s)
-  if ! command -v opencode2 &> /dev/null; then
-    echo "opencode2 not found. Install with: npm install -g @opencode-ai/cli@beta"
+  if ! command -v opencode &> /dev/null; then
+    echo "opencode not found. Install with: npm install -g @opencode/cli@latest"
     return 1
   fi
-  opencode2 run \
+  opencode run \
     --agent plan \
     "What is the $plat bash command to $@? Only return the command to run itself, do not describe anything. Only use commands and executables that are common on most $plat systems. Do not quote the response and do not use markdown."
 }
@@ -167,15 +167,15 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-if command -v opencode2 &> /dev/null; then
-  source <(opencode2 --completions zsh)
+if command -v opencode &> /dev/null; then
+  source <(opencode --completions zsh)
 fi
 
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# Connect the local OpenCode V2 client to cortx-server over Tailscale.
+# Connect the local OpenCode client to cortx-server over Tailscale.
 # Use OPENCODE_PASSWORD if configured; otherwise prompt without echoing it.
 oc-cortx() {
   local cortx_password="${OPENCODE_PASSWORD:-}"
@@ -187,7 +187,7 @@ oc-cortx() {
     printf 'A server password is required.\n' >&2
     return 1
   fi
-  OPENCODE_PASSWORD="$cortx_password" command opencode2 --server http://cortx-server:4096 "$@"
+  OPENCODE_PASSWORD="$cortx_password" command opencode --server http://cortx-server:4096 "$@"
 }
 
 # bun completions

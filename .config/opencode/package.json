@@ -3,7 +3,7 @@
     "postinstall": "node ./scripts/setup-notifier-hook-bundle.mjs"
   },
   "dependencies": {
-    "@opencode-ai/plugin": "0.0.0-next-16350"
+    "@opencode/plugin": "2.0.12"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",

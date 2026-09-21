@@ -24,15 +24,15 @@ cp .zshrc.local.example ~/.zshrc.local
 
 This file is automatically sourced by `.zshrc` if it exists and is **never tracked by git**.
 
-## OpenCode V2
+## OpenCode
 
-OpenCode V2 is installed globally with npm and run as `opencode2`. The `oc` shell alias also runs V2.
+OpenCode is installed globally with npm and run as `opencode`. The `oc` shell alias also runs opencode.
 
 ```bash
-npm install -g @opencode-ai/cli@beta
+npm install -g @opencode/cli@latest
 ```
 
-`.config/opencode/` contains the native V2 configuration used by OpenCode. `scripts/symlink.sh` installs it at `~/.config/opencode`.
+`.config/opencode/` contains the native configuration used by OpenCode. `scripts/symlink.sh` installs it at `~/.config/opencode`.
 
 ## Directory Structure
 
@@ -50,7 +50,7 @@ dotfiles/
 ├── .agents/
 │   └── skills/              # Skills installed from the `skills` npm CLI package
 ├── .config/
-│   ├── opencode/             # Native OpenCode V2 configuration
+│   ├── opencode/             # Native OpenCode configuration
 │   │   ├── commands/        # Custom OpenCode commands
 │   │   └── skills/          # Custom handwritten OpenCode skills
 └── scripts/

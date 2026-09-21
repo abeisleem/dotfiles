@@ -111,7 +111,7 @@ Include the exact canonical paths. Reference other durable artifacts—such as s
 
 ### Automated self-compaction
 
-When explicitly authorized and the current OpenCode V2 session ID is known:
+When explicitly authorized and the current OpenCode session ID is known:
 
 1. Build and verify the continuation prompt. Never guess the session ID or target another session.
 2. Prefer the OpenCode HTTP API through Executor and its `execute` workflow; discover the exact connected compact and prompt tools.
@@ -119,6 +119,6 @@ When explicitly authorized and the current OpenCode V2 session ID is known:
 4. If compaction admission fails, do not enqueue the prompt. If compaction succeeds but prompt admission fails, return the full prompt for manual recovery.
 5. Never wait on the current session from inside itself. End substantive work after admission.
 
-If Executor is unavailable, use the authenticated `opencode2 api` client in the same order: `POST /api/session/{sessionID}/compact`, then `POST /api/session/{sessionID}/prompt`. Serialize JSON safely. If identity, authentication, routes, or ordering cannot be verified, use manual compaction.
+If Executor is unavailable, use the authenticated `opencode api` client in the same order: `POST /api/session/{sessionID}/compact`, then `POST /api/session/{sessionID}/prompt`. Serialize JSON safely. If identity, authentication, routes, or ordering cannot be verified, use manual compaction.
 
 After resumption, treat the checkpoint as stale until you reread instructions and durable state, inspect the worktree and child sessions, and reconcile discrepancies.
