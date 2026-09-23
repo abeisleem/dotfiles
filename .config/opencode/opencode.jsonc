@@ -6,13 +6,13 @@
   "shell": "/bin/zsh",
   "agents": {
     "title": {
-      "model": "opencode/deepseek-v4-flash-free"
+      "model": "opencode/kimi-k2.5-free"
     },
     "summary": {
       "model": "opencode/deepseek-v4-flash-free"
     },
     "compaction": {
-      "model": "opencode/deepseek-v4-flash-free"
+      "model": "openai/gpt-5-nano"
     }
   },
   "permissions": [
