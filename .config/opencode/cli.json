@@ -1,4 +1,5 @@
 {
+  "$schema": "https://opencode.ai/v2/cli.json",
   "theme": {
     "name": "tokyonight"
   },
@@ -9,9 +10,9 @@
     "acceleration": true
   },
   "attention": {
-    "enabled": true,
     "sound": true,
-    "notifications": true
+    "notifications": true,
+    "volume": 0.4
   },
   "diffs": {
     "wrap": "word",
@@ -27,13 +28,11 @@
     "grouping": "auto",
     "image_preview": false,
     "new_location": "inherit",
-    "terminal": true,
     "tps": true
   },
   "animations": true,
   "tabs": {
     "scope": "global",
-    "vertical": false,
     "enabled": true,
     "layout": "vertical",
     "indicators": "status"
