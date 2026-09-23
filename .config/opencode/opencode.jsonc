@@ -5,9 +5,6 @@
   "default_agent": "anti-glaze",
   "shell": "/bin/zsh",
   "agents": {
-    "anti-glaze": {
-      "color": "#2f07d9"
-    },
     "title": {
       "model": "opencode/deepseek-v4-flash-free"
     },
