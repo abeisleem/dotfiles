@@ -143,7 +143,7 @@ brew-mine() {
 please() {
   local plat=$(uname -s)
   if ! command -v opencode &> /dev/null; then
-    echo "opencode not found. Install with: npm install -g @opencode/cli@latest"
+    echo "opencode not found. Install with: brew install anomalyco/tap/opencode-v2"
     return 1
   fi
   opencode run \

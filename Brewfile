@@ -34,6 +34,8 @@ brew "tree"
 brew "yt-dlp"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe", trusted: true
 # Memory training application
@@ -63,5 +65,4 @@ cask "tailscale-app"
 cargo "terminal-control"
 npm "@firecrawl/anydoc-darwin-arm64"
 npm "@firecrawl/anydoc"
-npm "@opencode/cli"
 npm "executor"

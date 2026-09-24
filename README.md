@@ -26,10 +26,10 @@ This file is automatically sourced by `.zshrc` if it exists and is **never track
 
 ## OpenCode
 
-OpenCode is installed globally with npm and run as `opencode`. The `oc` shell alias also runs opencode.
+OpenCode is installed with Homebrew and run as `opencode`. The `oc` shell alias also runs opencode.
 
 ```bash
-npm install -g @opencode/cli@latest
+brew install anomalyco/tap/opencode-v2
 ```
 
 `.config/opencode/` contains the native configuration used by OpenCode. `scripts/symlink.sh` installs it at `~/.config/opencode`.
