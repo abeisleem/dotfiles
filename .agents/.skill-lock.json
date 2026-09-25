@@ -497,6 +497,15 @@
       "skillFolderHash": "e880ad90e8a0a8384f5cfae2cdd6a854e2de5d89",
       "installedAt": "2026-08-21T17:24:54.990Z",
       "updatedAt": "2026-08-21T17:24:54.990Z"
+    },
+    "bro": {
+      "source": "dmmulroy/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/dmmulroy/skills.git",
+      "skillPath": "bro/SKILL.md",
+      "skillFolderHash": "53c3b2c5dc11fe0ee4156468da27505df9239dc6",
+      "installedAt": "2026-09-25T13:46:51.719Z",
+      "updatedAt": "2026-09-25T13:46:51.719Z"
     }
   },
   "dismissed": {
@@ -504,14 +513,13 @@
   },
   "lastSelectedAgents": [
     "amp",
-    "antigravity",
-    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
-    "deepagents",
+    "droid",
     "gemini-cli",
     "github-copilot",
+    "kilo",
     "kimi-code-cli",
     "opencode",
     "warp",
