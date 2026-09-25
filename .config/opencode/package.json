@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "postinstall": "node ./scripts/setup-notifier-hook-bundle.mjs"
-  },
   "dependencies": {
     "@opencode/plugin": "2.0.12"
   },
