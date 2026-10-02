@@ -5,7 +5,7 @@
 	defaultBranch = main
 [user]
 	name = Abe Isleem
-	email = a.f_isleem@hotmail.com
+	email = 29489334+abeisleem@users.noreply.github.com
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
