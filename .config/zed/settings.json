@@ -48,6 +48,11 @@
         },
         {
           "paths": [
+            "/home/abe/repos/dotfiles"
+          ]
+        },
+        {
+          "paths": [
             "/home/abe/repos/pravosllc/optimise-team-ops"
           ]
         },
