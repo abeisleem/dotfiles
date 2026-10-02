@@ -15,6 +15,7 @@
       "model": "openai/gpt-5-nano"
     }
   },
+  "plugins": ["-abe.whatsapp"],
   "permissions": [
     // # EXTERNAL DIRECTORY
     {
