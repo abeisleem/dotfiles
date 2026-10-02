@@ -3,7 +3,6 @@
 `plugins/wacli/index.ts` registers Code Mode tools under `tools.whatsapp`:
 `status`, `chats`, `contacts_search`, `messages_list`, `messages_search`,
 `messages_show`, `send_text`, and `send_file`.
-`plugins/whatsapp.ts` is the auto-discovered entrypoint.
 
 Requires wacli v0.20.0 at `$HOME/.local/bin/wacli`, or an absolute
 `WACLI_BINARY` set in the OpenCode server environment. Uses wacli's normal
@@ -28,6 +27,6 @@ stream is capped at 1 MiB; list/search limits are 1–200, default 50.
 From `.config/opencode`, verify without sending real messages:
 
 ```sh
-node --experimental-strip-types --test tests/wacli.test.ts
-./node_modules/.bin/tsc --ignoreConfig --noEmit --skipLibCheck --strict --target es2022 --module nodenext --moduleResolution nodenext --types node --allowImportingTsExtensions plugins/wacli/index.ts tests/wacli.test.ts
+node --experimental-strip-types --test plugins/wacli/tests/wacli.test.ts
+./node_modules/.bin/tsc --ignoreConfig --noEmit --skipLibCheck --strict --target es2022 --module nodenext --moduleResolution nodenext --types node --allowImportingTsExtensions plugins/wacli/index.ts plugins/wacli/tests/wacli.test.ts
 ```

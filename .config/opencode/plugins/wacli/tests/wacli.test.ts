@@ -3,7 +3,7 @@ import { mkdtemp, writeFile, rm } from "node:fs/promises"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
-import { buildArgs, invoke } from "../plugins/wacli/index.ts"
+import { buildArgs, invoke } from "../index.ts"
 
 test("CLI arguments preserve literal text and cannot inject flags", () => {
   const malicious = "--store=/elsewhere; $(touch /tmp/nope)\n'quoted'"
