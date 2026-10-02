@@ -40,7 +40,7 @@
   },
   "prompt": {
     "paste": "full",
-    "image_preview": false
+    "image_preview": true
   },
   "terminal": {
     "title": true,
