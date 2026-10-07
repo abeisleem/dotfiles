@@ -29,7 +29,9 @@
     "grouping": "auto",
     "image_preview": false,
     "new_location": "inherit",
-    "tps": true
+    "tps": true,
+    "verbosity": "medium",
+    "permissions": "prompt"
   },
   "animations": true,
   "tabs": {
