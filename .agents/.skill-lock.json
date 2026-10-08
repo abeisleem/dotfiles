@@ -506,6 +506,15 @@
       "skillFolderHash": "53c3b2c5dc11fe0ee4156468da27505df9239dc6",
       "installedAt": "2026-09-25T13:46:51.719Z",
       "updatedAt": "2026-09-25T13:46:51.719Z"
+    },
+    "simplify": {
+      "source": "brianlovin/agent-config",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/brianlovin/agent-config.git",
+      "skillPath": "skills/simplify/SKILL.md",
+      "skillFolderHash": "83566973442dc05bcf5abbe83053e8a8e5f50b6b",
+      "installedAt": "2026-10-08T17:24:51.143Z",
+      "updatedAt": "2026-10-08T17:24:51.143Z"
     }
   },
   "dismissed": {
