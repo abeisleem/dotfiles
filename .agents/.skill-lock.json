@@ -205,45 +205,45 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/agents-sdk/SKILL.md",
-      "skillFolderHash": "6960162efc4b6fea7bae6963a45527a7783901c2",
+      "skillFolderHash": "b006d3c80926638a34517284a7db501e97cc6bac",
       "installedAt": "2026-03-27T10:48:47.252Z",
-      "updatedAt": "2026-09-21T21:17:38.724Z"
+      "updatedAt": "2026-10-08T17:29:54.978Z"
     },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/cloudflare/SKILL.md",
-      "skillFolderHash": "34386215892a8255fba7112d1a2a3e5ff40150e8",
+      "skillFolderHash": "f9aa5dc020f8b8d5291611a22616efc8b1bcde77",
       "installedAt": "2026-03-27T10:48:49.689Z",
-      "updatedAt": "2026-09-21T21:17:41.411Z"
+      "updatedAt": "2026-10-08T17:29:57.808Z"
     },
     "durable-objects": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/durable-objects/SKILL.md",
-      "skillFolderHash": "ca4497e4bfa069d2d06e14440b78c81eccd8c5f0",
+      "skillFolderHash": "d0fcb442473e60f8dba76e023412de50d70b41aa",
       "installedAt": "2026-03-27T10:48:50.419Z",
-      "updatedAt": "2026-09-21T21:17:43.247Z"
+      "updatedAt": "2026-10-08T17:30:00.578Z"
     },
     "workers-best-practices": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/workers-best-practices/SKILL.md",
-      "skillFolderHash": "2b353123539948ca95c757166437c1fc5eefc208",
+      "skillFolderHash": "46b2eac6a1a81c6bfbc01164f93f0432ee3d9751",
       "installedAt": "2026-03-27T10:48:51.212Z",
-      "updatedAt": "2026-09-21T21:17:45.192Z"
+      "updatedAt": "2026-10-08T17:30:03.727Z"
     },
     "wrangler": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/cloudflare/skills.git",
       "skillPath": "skills/wrangler/SKILL.md",
-      "skillFolderHash": "d87d80a0c3f0a3c2d38222b02d459ef85af60320",
+      "skillFolderHash": "2dab1373cf45bcde6db84354711b7406127a239a",
       "installedAt": "2026-03-27T10:48:51.891Z",
-      "updatedAt": "2026-09-21T21:17:46.920Z"
+      "updatedAt": "2026-10-08T17:30:06.517Z"
     },
     "web-perf": {
       "source": "cloudflare/skills",
@@ -259,9 +259,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
       "skillPath": "skills/api-designer/SKILL.md",
-      "skillFolderHash": "bbb2fd84c10a46fb3d17121ffbc86aa1bba5ca65",
+      "skillFolderHash": "fade90ece5a66c42d711ee49f8d32be39ec90b87",
       "installedAt": "2026-03-29T11:12:04.035Z",
-      "updatedAt": "2026-05-18T06:14:02.537Z"
+      "updatedAt": "2026-10-08T17:30:10.513Z"
     },
     "plan-harder": {
       "source": "am-will/codex-skills",
@@ -350,18 +350,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/handoff/SKILL.md",
-      "skillFolderHash": "2242e8f05424b8c2ae94194a90d97b88d16108ec",
+      "skillFolderHash": "ce24892bd2d4b9e7fd5ac9b95c03175e18bef388",
       "installedAt": "2026-06-14T20:27:36.571Z",
-      "updatedAt": "2026-09-21T21:17:59.336Z"
+      "updatedAt": "2026-10-08T17:30:12.653Z"
     },
     "grilling": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/grilling/SKILL.md",
-      "skillFolderHash": "f0732035b8b1b60ae39454e4191caef32fa91903",
+      "skillFolderHash": "28aceb4c9567b985cb47f7db88cf23c9f33af8b8",
       "installedAt": "2026-06-26T07:49:08.734Z",
-      "updatedAt": "2026-09-21T21:18:00.574Z"
+      "updatedAt": "2026-10-08T17:30:14.015Z"
     },
     "terminal-control": {
       "source": "kitlangton/terminal-control",
@@ -413,18 +413,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/ask-matt/SKILL.md",
-      "skillFolderHash": "85f3ba59f22c16de988e36b781ae46d0d9098f94",
+      "skillFolderHash": "d6a0d9bf3cdc78cbfcbd6466ac5fd3deffb52877",
       "installedAt": "2026-07-23T09:45:34.365Z",
-      "updatedAt": "2026-09-21T21:18:01.890Z"
+      "updatedAt": "2026-10-08T17:30:15.343Z"
     },
     "domain-modeling": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/domain-modeling/SKILL.md",
-      "skillFolderHash": "388c9822641805ca2dcd5038e68a1d5282437ee5",
+      "skillFolderHash": "ea30ee454ba264543dbe40737973b1a5afb9f0e6",
       "installedAt": "2026-07-23T09:45:34.366Z",
-      "updatedAt": "2026-09-21T21:18:03.177Z"
+      "updatedAt": "2026-10-08T17:30:16.753Z"
     },
     "grill-me": {
       "source": "mattpocock/skills",
@@ -449,18 +449,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/productivity/teach/SKILL.md",
-      "skillFolderHash": "2ab11f2f51f3c29771edb5d4258d807a49462491",
+      "skillFolderHash": "3fd617b610e59acbb99644de1ef37e394ff53cd1",
       "installedAt": "2026-07-23T09:45:34.368Z",
-      "updatedAt": "2026-09-21T21:18:08.062Z"
+      "updatedAt": "2026-10-08T17:30:18.093Z"
     },
     "wayfinder": {
       "source": "mattpocock/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/wayfinder/SKILL.md",
-      "skillFolderHash": "8ec0462658381bd1606d3f9db14ffc67df6a2a43",
+      "skillFolderHash": "32b0ce970b1394ede47116e1d3e07f9ccc87591f",
       "installedAt": "2026-07-23T09:45:34.369Z",
-      "updatedAt": "2026-09-21T21:18:09.553Z"
+      "updatedAt": "2026-10-08T17:30:19.355Z"
     },
     "loop-me": {
       "source": "mattpocock/skills",
