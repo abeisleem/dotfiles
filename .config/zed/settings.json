@@ -28,6 +28,11 @@
       "projects": [
         {
           "paths": [
+            "/"
+          ]
+        },
+        {
+          "paths": [
             "/home/abe"
           ]
         },
@@ -59,6 +64,11 @@
         {
           "paths": [
             "/home/abe/repos/pravosllc/pikl-partner-segmentation"
+          ]
+        },
+        {
+          "paths": [
+            "/home/abe/repos/pravosllc/vibrana"
           ]
         }
       ]
