@@ -105,11 +105,6 @@
   ],
   "mcp": {
     "servers": {
-      "supabase": {
-        "type": "remote",
-        "url": "http://localhost:54321/mcp",
-        "disabled": true
-      },
       "executor": {
         "type": "remote",
         "url": "https://cortx-server.bee-arowana.ts.net:4788/mcp",
