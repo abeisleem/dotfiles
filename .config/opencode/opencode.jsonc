@@ -110,17 +110,7 @@
         "url": "http://localhost:54321/mcp",
         "disabled": true
       },
-      "executor-local": {
-        "type": "remote",
-        "url": "http://localhost:4789/mcp",
-        "oauth": false,
-        "codemode": false,
-        "disabled": false,
-        "headers": {
-          "Authorization": "Bearer {env:EXECUTOR_TOKEN}"
-        }
-      },
-      "executor-cortx": {
+      "executor": {
         "type": "remote",
         "url": "https://cortx-server.bee-arowana.ts.net:4788/mcp",
         "codemode": false,
