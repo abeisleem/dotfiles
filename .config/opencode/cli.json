@@ -51,5 +51,6 @@
   "debug": {
     "devtools": false,
     "turn_tokens": false
-  }
+  },
+  "highlights": true
 }
