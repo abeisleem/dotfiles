@@ -74,6 +74,9 @@
       ]
     }
   ],
+  "file_types":{
+    "Markdown": [".todo"]
+  },
   "diff_view_style": "unified",
   "sticky_scroll": {
     "enabled": true,
@@ -88,7 +91,6 @@
     "collapse_untracked_diff": false,
   },
   "disable_ai": false,
-  "buffer_font_family": ".ZedMono",
   "agent": {
     "dock": "right",
     "model_parameters": [],
