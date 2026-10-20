@@ -117,6 +117,7 @@
     "provider": "random"
   },
   "experimental": {
-    "subagent_depth": 2
+    "subagent_depth": 2,
+    "todo": true
   }
 }
