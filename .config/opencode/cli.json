@@ -27,7 +27,7 @@
     "thinking": "show",
     "markdown": "rendered",
     "grouping": "auto",
-    "image_preview": false,
+    "image_preview": true,
     "new_location": "inherit",
     "tps": true,
     "verbosity": "medium",
