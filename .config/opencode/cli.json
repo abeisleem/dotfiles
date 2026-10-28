@@ -30,7 +30,7 @@
     "image_preview": true,
     "new_location": "inherit",
     "tps": true,
-    "verbosity": "medium",
+    "verbosity": "low",
     "permissions": "prompt"
   },
   "animations": true,
