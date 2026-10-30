@@ -39,7 +39,7 @@
     "enabled": true,
     "layout": "vertical",
     "indicators": "status",
-    "mode": "on"
+    "mode": "off"
   },
   "prompt": {
     "paste": "full",
