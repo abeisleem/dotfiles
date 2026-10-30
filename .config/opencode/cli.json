@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/v2/cli.json",
-  "plugins": ["opencode-quick-quote", "opencode-quick-links"],
+  "plugins": ["opencode-quick-quote", "opencode-quick-links", "opencode-switchboard"],
   "theme": {
     "name": "tokyonight"
   },
@@ -38,7 +38,8 @@
     "scope": "global",
     "enabled": true,
     "layout": "vertical",
-    "indicators": "status"
+    "indicators": "status",
+    "mode": "on"
   },
   "prompt": {
     "paste": "full",
