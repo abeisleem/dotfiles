@@ -24,6 +24,7 @@
   },
   "plugins": [
     "-abe.whatsapp",
+    "opencode-switchboard"
   ],
   "permissions": [
     // # EXTERNAL DIRECTORY
