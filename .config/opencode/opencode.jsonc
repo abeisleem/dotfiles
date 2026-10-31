@@ -4,6 +4,13 @@
   "update": "notify",
   "default_agent": "anti-glaze",
   "shell": "/bin/zsh",
+  "compaction": {
+    "auto": true,
+    "buffer": "25%",
+    "keep": {
+      "tokens": 24000,
+    },
+  },
   "agents": {
     "title": {
       "model": "opencode/kimi-k2.5-free"
