@@ -124,7 +124,9 @@
     "provider": "random"
   },
   "experimental": {
-    "subagent_depth": 2,
-    "todo": true
+    "subagent_depth": 3,
+    "todo": true,
+    "background_compaction": true,
+    "artifacts": true
   }
 }
