@@ -41,36 +41,6 @@
           "paths": [
             "/home/abe/repos"
           ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/ana"
-          ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/cortx-server"
-          ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/dotfiles"
-          ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/pravosllc/optimise-team-ops"
-          ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/pravosllc/pikl-partner-segmentation"
-          ]
-        },
-        {
-          "paths": [
-            "/home/abe/repos/pravosllc/vibrana"
-          ]
         }
       ]
     }
