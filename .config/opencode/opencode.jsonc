@@ -24,7 +24,8 @@
   },
   "plugins": [
     "-abe.whatsapp",
-    "opencode-switchboard"
+    "opencode-switchboard",
+    "-opencode.provider.openai-context-caps",
   ],
   "permissions": [
     // # EXTERNAL DIRECTORY
